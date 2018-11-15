@@ -1,0 +1,105 @@
+<view class="nav">
+  <image class="nav-bgc" src="../../../static/img/nav.png"></image>
+  <view class="nav-title">我的课程</view>
+  <view class="nav-back" bindtap="goBack">
+    <image src="../../../static/img/arrow_left.png"></image>
+  </view>
+</view>
+<view class="nav-clone"></view>
+
+<view class="all">
+  <!-- <view class="all-top">
+    <view class="all-top-image">
+      <image src="../../../static/img/classTwo.png"></image>
+      本月课程
+    </view>
+    <view>参与成长活动 <text>{{actLength}}</text> 次</view>
+    <view>参与体验课程 <text>{{courLength}}</text> 次</view>
+    <view>参与社会实践 <text>{{pracLength}}</text> 次</view>
+    <view class="all-top-btn" bindtap="openTap">课次兑换奖励</view>
+  </view> -->
+  <view class="all-content">
+    <view class="span">美课活动
+      <image src="../../../static/img/huo.png"></image>
+    </view>
+    <view class="activity">
+      <view class="actBox" wx:if="{{showAct}}">
+        <view class="activity-box" 
+        wx:for="{{activityList}}" 
+        wx:key=""
+        bindtap="openRecruit"
+        data-sn="{{item.sn}}">
+          <view class="ab-image">
+            <image class="ab-image-one" src="{{item.actiPic}}"></image>
+            <image class="ab-image-two" src="{{item.optiType == 0 ? '' : '../../../static/img/vip.png'}}"></image>
+          </view>
+          <view class="ab-detail">
+            <view class="ab-detail-one">{{item.title}}</view>
+            <view class="ab-detail-two">{{item.desr}}</view>
+            <view class="ab-detail-three">满<text>{{item.min}}</text>人活动开启</view>
+            <view class="ab-detail-four">
+              <view class="ad-four">￥<text class="text1">{{item.price}}</text> / 会员优惠券抵扣</view>
+              <view class="ad-four-two">{{item.actiCount}} / {{item.max}}人</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="showNo" wx:if="{{!showAct}}">暂无报名的活动呦~</view>
+    </view>
+    <view class="span">美课课程
+      <image src="../../../static/img/class2.png"></image>
+    </view>
+    <view class="activity">
+      <view class="actBox" wx:if="{{showCour}}">
+        <view class="activity-box" 
+        wx:for="{{curriculumList}}" 
+        wx:key=""
+        bindtap="openCurriculumDetail"
+        data-sn="{{item.sn}}">
+          <view class="ab-image">
+            <image class="ab-image-one" src="{{item.courPic}}"></image>
+            <image class="ab-image-two" src="{{item.optiType == 0 ? '' : '../../../static/img/vip.png'}}"></image>
+          </view>
+          <view class="ab-detail">
+            <view class="ab-detail-one">{{item.title}}</view>
+            <view class="ab-detail-two">{{item.desr}}</view>
+            <view class="ab-detail-three">满<text>{{item.min}}</text>人活动开启</view>
+            <view class="ab-detail-four">
+              <view class="ad-four">￥<text class="text1">{{item.price}}</text> / vip会员免费</view>
+              <view class="ad-four-two">{{item.courCount}} / {{item.max}}人</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="showNo" wx:if="{{!showCour}}">暂无报名的课程呦~</view>
+    </view>
+    <view class="span">兼职&公益
+      <image src="../../../static/img/activity2.png"></image>
+    </view>
+    <view class="activity">
+      <view class="actBox" wx:if="{{showPrac}}">
+        <view class="activity-box" 
+        wx:for="{{practiceList}}" 
+        wx:key=""
+        bindtap="openCurriculumDetail"
+        data-sn="{{item.sn}}">
+          <view class="ab-image">
+            <image class="ab-image-one" src="{{item.courPic}}"></image>
+            <image class="ab-image-two" src="{{item.optiType == 0 ? '' : '../../../static/img/vip.png'}}"></image>
+          </view>
+          <view class="ab-detail">
+            <view class="ab-detail-one">{{item.title}}</view>
+            <view class="ab-detail-two">{{item.desr}}</view>
+            <view class="ab-detail-three">满<text>{{item.min}}</text>人活动开启</view>
+            <view class="ab-detail-four">
+              <view class="ad-four">￥<text class="text1">{{item.price}}</text> / vip会员免费</view>
+              <view class="ad-four-two">{{item.courCount}} / {{item.max}}人</view>
+            </view>
+          </view>
+        </view>
+      </view>
+       <view class="showNo" wx:if="{{!showPrac}}">暂无报名的实践呦~</view>
+    </view>
+  </view>
+</view>
+<loading hidden="{{hidden}}">玩命加载中…</loading>

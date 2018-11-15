@@ -1,0 +1,169 @@
+<view class="nav">
+  <image class="nav-bgc" src="../../../static/img/nav.png"></image>
+  <image class="nav-logo" src="../../../static/img/logo.png"></image>
+</view>
+<view class="nav-clone"></view>
+
+<view class="all">
+  <view class="all-top">
+    <view class="all-top-image">
+      <image src="../../../static/img/classTwo.png"></image>
+      我的成长履历
+    </view>
+    <view class="at-content-box">
+      <view class="at-content-left">
+        <view class="at-content-view">活动参与<text>{{recordList.actiCount}}</text>次
+          <!-- <image src="../../../static/img/tel.png" class="at-cv-img"></image> -->
+          <view class="at-cv-img"></view>
+        </view>
+        <view class="at-content-view">课程参与<text>{{recordList.courCount}}</text>次
+        <!-- <view class="at-content-view">课程参与<text>88</text>次 -->
+          <view class="at-cv-img"></view>
+        </view>
+        <view class="at-content-view">实践参与<text>0</text>次
+          <view class="at-cv-img"></view>
+        </view>
+      </view>
+      <view class="at-content-right">
+        <view class="at-content-view">邀约好友获得<text>{{recordList.inviteMemSum}}</text>票
+          <view class="at-cv-img"></view>
+        </view>
+        <view class="at-content-view at-content-view-other">
+          <view class="at-content-one">已使用<text style="color: #fe0000">{{recordList.inviteMemUsed}}</text>票
+          <!-- <view class="at-content-one">已使用<text style="color: #fe0000">888</text>票 -->
+            <view class="at-cv-img-two"></view>
+          </view>
+          <view class="at-content-one">未使用<text style="color: #70ad46">{{recordList.inviteMemOver}}</text>票
+          <!-- <view class="at-content-one">未使用<text style="color: #70ad46">888</text>票 -->
+            <view class="at-cv-img-three"></view>
+          </view>
+        </view>
+        <view class="at-btn" bindtap="openErWeiMa">邀约好友一起参与</view>
+      </view>
+    </view>
+  </view>
+  <view class="all-content">
+  <view class="span">本周·主题沙龙</view>
+    <view class="activity">
+      <view class="actBox" wx:if="{{showForum}}">
+        <view class="activity-box" 
+        wx:for="{{mobilesList}}" 
+        wx:key=""
+        bindtap="openCurriculumOther"
+        data-actiType="1"
+        data-sn="{{item.sn}}">
+          <view class="ab-image">
+            <image class="ab-image-one" src="{{item.actiPic}}"></image>
+            <view class="ab-image-state" style="color:{{myOpenOne == 0 ? 'red' : 'green'}}">{{vipStateOne}}</view>
+          </view>
+          <view class="ab-detail">
+            <view class="ab-detail-one">{{item.title}}</view>
+            <view class="ab-detail-two">{{item.desr}}</view>
+            <view class="ab-detail-five">VIP会员可直接报名参与</view>
+            <view class="ab-detail-three">体验会员<text>{{item.inviteMemUsed}}</text>票自动开启</view>
+            <!-- <view class="ab-detail-three">累计邀请<text>{{item.min}}</text>人自动开启，你已邀请<text>{{item.min}}</text>人</view> -->
+            <!-- <view class="ab-detail-three">或线上参与<text>{{item.min}}</text>次活动，你已参与活动<text>{{item.min}}</text>次</view> -->
+            <!-- <view class="{{myOpen == 0 ? 'ab-detail-btn' : 'ab-detail-btn-other'}}">待开启</view> -->
+          </view>
+        </view>
+      </view>
+      <view class="showNo" wx:if="{{!showForum}}">暂无可开启的名人讲堂呦~</view>
+    </view>
+    <view class="span">本周·技术达人</view>
+    <view class="activity">
+      <view class="actBox" wx:if="{{showForum}}">
+        <view class="activity-box" 
+        wx:for="{{forumList}}" 
+        wx:key=""
+        bindtap="openCurriculumOther"
+        data-courType="1"
+        data-sn="{{item.sn}}">
+          <view class="ab-image">
+            <image class="ab-image-one" src="{{item.courPic}}"></image>
+            <view class="ab-image-state" style="color:{{myOpenOne == 0 ? 'red' : 'green'}}">{{vipStateOne}}</view>
+          </view>
+          <view class="ab-detail">
+            <view class="ab-detail-one">{{item.title}}</view>
+            <view class="ab-detail-two">{{item.desr}}</view>
+            <view class="ab-detail-five">VIP会员可直接报名参与</view>
+            <view class="ab-detail-three">体验会员<text>{{item.inviteMemUsed}}</text>票自动开启</view>
+            <!-- <view class="ab-detail-three">累计邀请<text>{{item.min}}</text>人自动开启，你已邀请<text>{{item.min}}</text>人</view> -->
+            <!-- <view class="ab-detail-three">或线上参与<text>{{item.min}}</text>次活动，你已参与活动<text>{{item.min}}</text>次</view> -->
+            <!-- <view class="{{myOpen == 0 ? 'ab-detail-btn' : 'ab-detail-btn-other'}}">待开启</view> -->
+          </view>
+        </view>
+      </view>
+      <view class="showNo" wx:if="{{!showForum}}">暂无可开启的名人讲堂呦~</view>
+    </view>
+    <view class="span">自制·达人短课</view>
+    <view class="activity">
+      <view class="actBox" wx:if="{{showCour}}">
+        <view class="activity-box" 
+        wx:for="{{curriculumList}}" 
+        wx:key=""
+        bindtap="openCurriculumOther"
+        data-courType="2"
+        data-sn="{{item.sn}}">
+          <view class="ab-image">
+            <image class="ab-image-one" src="{{item.courPic}}"></image>
+            <view class="ab-image-state" style="color:{{myOpenTwo == 0 ? 'red' : 'green'}}">{{vipStateTwo}}</view>
+          </view>
+          <view class="ab-detail">
+            <view class="ab-detail-one">{{item.title}}</view>
+            <view class="ab-detail-two">{{item.desr}}</view>
+            <view class="ab-detail-five">VIP会员可直接报名参与</view>
+            <view class="ab-detail-three">体验会员<text>{{item.inviteMemUsed}}</text>票自动开启</view>
+          </view>
+        </view>
+      </view>
+      <view class="showNo" wx:if="{{!showCour}}">暂无可开启的优选课程呦~</view>
+    </view>
+    <view class="span">美课·就业辅导</view>
+    <view class="activity">
+      <view class="actBox" wx:if="{{showJob}}">
+        <view class="activity-box" 
+        wx:for="{{jobList}}"
+        wx:key=""
+        bindtap="openCurriculumOther"
+        data-courType="3"
+        data-sn="{{item.sn}}">
+          <view class="ab-image">
+            <image class="ab-image-one" src="{{item.courPic}}"></image>
+            <view class="ab-image-state" style="color:{{myOpenThree == 0 ? 'red' : 'green'}}">{{vipStateThree}}</view>
+          </view>
+          <view class="ab-detail">
+            <view class="ab-detail-one">{{item.title}}</view>
+            <view class="ab-detail-two">{{item.desr}}</view>
+            <view class="ab-detail-five">VIP会员可直接报名参与</view>
+            <view class="ab-detail-three">体验会员<text>{{item.inviteMemUsed}}</text>票自动开启</view>
+          </view>
+        </view>
+      </view>
+       <view class="showNo" wx:if="{{!showJob}}">暂无可开启的就业推荐呦~</view>
+    </view>
+    <view class="span">美课·面试辅导</view>
+    <view class="activity">
+      <view class="actBox" wx:if="{{showResume}}">
+        <view class="activity-box" 
+        wx:for="{{resumeList}}"
+        wx:key=""
+        bindtap="openCurriculumOther"
+        data-courType="4"
+        data-sn="{{item.sn}}">
+          <view class="ab-image">
+            <image class="ab-image-one" src="{{item.courPic}}"></image>
+            <view class="ab-image-state" style="color:{{myOpenFour == 0 ? 'red' : 'green'}}">{{vipStateFour}}</view>
+          </view>
+          <view class="ab-detail">
+            <view class="ab-detail-one">{{item.title}}</view>
+            <view class="ab-detail-two">{{item.desr}}</view>
+            <view class="ab-detail-five">VIP会员可直接报名参与</view>
+            <view class="ab-detail-three">体验会员<text>{{item.inviteMemUsed}}</text>票自动开启</view>
+          </view>
+        </view>
+      </view>
+       <view class="showNo" wx:if="{{!showResume}}">暂无可开启的简历制作呦~</view>
+    </view>
+  </view>
+</view>
+<loading hidden="{{hidden}}">玩命加载中…</loading>

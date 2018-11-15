@@ -1,0 +1,48 @@
+<view class="nav">
+  <image class="nav-bgc" src="../../../static/img/nav.png"></image>
+  <view class="nav-title">我的奖金</view>
+  <view class="nav-back" bindtap="goBack">
+    <image src="../../../static/img/arrow_left.png"></image>
+  </view>
+</view>
+<view class="nav-clone"></view>
+
+<view class="bonus">
+  <view class="bonus-top" bindtap="openBank">
+    <image src="../../../static/img/bank.png" class="image-one"></image>
+    <view class="bank-title" wx:if="{{showLink}}">请先添加银行卡</view>
+    <view class="bank-title" wx:if="{{!showLink}}">
+      <view>{{name}}</view>
+      <view>{{num}}</view>
+    </view>
+    <image src="../../../static/img/arrow_right.png" class="image-two"></image>
+  </view>
+  <view class="bonus-show">
+    <view class="bonus-show-li">
+      <view class="bs-li-top">邀请好友</view>
+      <view class="bs-li-bottom">
+        <image src="../../../static/img/yaoqing2.png"></image>
+        <text>{{yaoqingNum}}人</text>
+      </view>
+    </view>
+    <view class="bonus-show-li">
+      <view class="bs-li-top">好友推荐</view>
+      <view class="bs-li-bottom">
+        <image src="../../../static/img/tuijian.png"></image>
+        <text>{{tuijianNum}}人</text>
+      </view>
+    </view>
+  </view>
+  <view class="bonus-content">
+    <view class="bonus-content-top">奖金金额：{{myMoney}}<text>元</text></view>
+    <view class="bonus-content-top">提现金额</view>
+    <view class="bonus-content-two">
+      <view>￥</view>
+      <input type="digit" bindinput="bindInput" value="{{moneyInput}}"/>
+    </view>
+    <view class="bonus-content-three" bindtap="openTranslate">账单详情</view>
+  </view>
+  <view class="login-footer" bindtap='btnclick'>
+    <view>提 现</view>
+  </view>
+</view>

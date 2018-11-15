@@ -1,0 +1,26 @@
+<view class="nav">
+  <image class="nav-bgc" src="../../../static/img/nav.png"></image>
+  <view class="nav-title">我的礼券</view>
+  <view class="nav-back" bindtap="goBack">
+    <image src="../../../static/img/arrow_left.png"></image>
+  </view>
+</view>
+<view class="nav-clone"></view>
+
+<view class="coupons" wx:if="{{showCoupons && !nomoreCoupons}}">
+  <view class="coupons-li" bindtap="useCoupons" wx:for="{{canList}}" wx:key="" data-id="{{index}}">
+    <image src="{{item.src}}"></image>
+    <view class="coupons-title">{{item.title}}</view>
+    <view class="coupons-time">有效期至：{{item.endTime}}</view>
+    <view class="coupons-btn">{{item.btn}}</view>
+    <view class="coupons-price">￥<text>{{item.coupon_money}}</text></view>
+  </view>
+  <view class="coupons-no">没有更多可用券 | <text bindtap="openInvalid">查看已失效的券 ></text></view>
+</view>
+<view class="nomoreCoupons" wx:if="{{showCoupons && nomoreCoupons}}">哎呀，优惠券用光光喽~</view>
+<view class="coupons-no-other" wx:if="{{showCoupons && nomoreCoupons}}">没有更多可用券 | <text bindtap="openInvalid">查看已失效的券 ></text></view>
+<view class="noCoupons" wx:if="{{!showCoupons}}">
+  <image src="../../../static/img/coupons_07.png"></image>
+  <view class="noCoupons-view">暂无优惠券哦！</view>
+</view>
+<loading hidden="{{hidden}}">玩命加载中…</loading>

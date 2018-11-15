@@ -1,0 +1,100 @@
+<!-- 课程页 -->
+<view class="nav">
+  <image class="nav-bgc" src="../../../static/img/nav.png"></image>
+  <view class="nav-title">美课实践</view>
+  <view class="nav-back" bindtap="goBack">
+    <image src="../../../static/img/arrow_left.png"></image>
+  </view>
+</view>
+<view class="nav-clone"></view>
+<view class="mask" wx:if="{{showMask}}" bindtap="closeList"></view>
+<view class="tabAll">
+  <view class="tabAll-top">
+    <view class="tt-li" bindtap="clickTabOne" style="color:{{colorOne}}">
+      综合排序
+      <image src="{{clickDownOne}}"></image>
+    </view>
+    <!-- <view class="tt-li" bindtap="clickTabTwo" style="color:{{colorTwo}}"> -->
+    <view class="tt-li" style="color:{{colorTwo}}">
+      <view>{{typename}}</view>
+      <!-- <image src="{{clickDownTwo}}"></image> -->
+    </view>
+    <view class="tt-li" bindtap="clickTabThree" style="color:{{colorThree}}">
+      位置筛选
+      <image src="{{clickDownThree}}"></image>
+    </view>
+  </view>
+  <view class="ttli-box">
+    <view 
+    class="ttb-li"
+    wx:for="{{sortLists}}"
+    wx:key=""
+    data-item="{{item}}"
+    bindtap="openSortLists"
+    wx:if="{{showSort}}"
+    >{{item.name}}</view>
+  </view>
+  <view class="ttli-box-two">
+    <view 
+    class="ttbt-li"
+    wx:for="{{screenLists}}"
+    wx:key=""
+    data-item="{{item}}"
+    bindtap="openScreenLists"
+    wx:if="{{showScreen}}"
+    >{{item.name}}</view>
+  </view>
+  <view class="ttli-box-three" wx:if="{{showClassify}}">
+    <view class="container">
+      <!-- 左侧 -->
+      <view class="nav_left">
+        <block wx:for="{{classifyLists}}" wx:key="">
+          <view class="nav_left_items {{curNav == item.sn ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}"
+            data-sn="{{item.sn}}">
+            {{item.typeNameI}}
+          </view>
+        </block>
+      </view>
+      <view class="nav_right">
+        <block  wx:if="{{showItems[index]}}" wx:for="{{classifyLists}}" wx:key="">
+          <view  data-show_id="{{index}}">
+            <block wx:for="{{classifyLists[index].courseTypeII}}" wx:key="">
+              <view class="nav_right_title">{{item.typeNameII}}</view>
+              
+            </block>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="tabAll-clone"></view>
+
+<view class="curriculum" wx:if="{{!showNot}}">
+  <view class=""></view>
+  <view class="actBox">
+    <view class="activity-box" 
+    wx:for="{{curriculumList}}" 
+    wx:key=""
+    bindtap="openCurriculumDetail" 
+    data-sn="{{item.sn}}">
+      <view class="acbox">
+        <view class="ab-image">
+          <image class="ab-image-one" src="{{item.courPic}}"></image>
+          <image class="ab-image-two" src="{{item.optiType == 0 ? '' : '../../static/img/vip.png'}}"></image>
+        </view>
+        <view class="ab-detail">
+          <view class="ab-detail-one">{{item.title}}</view>
+          <view class="ab-detail-two">{{item.desr}}</view>
+          <view class="ab-detail-three">满<text>{{item.min}}</text>人活动开启</view>
+          <view class="ab-detail-four">
+            <view class="ad-four">￥<text class="text1">{{item.price}}</text> / vip会员免费</view>
+            <view class="ad-four-two">{{item.courCount}} / {{item.max}}人</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{showNot}}" class="showNot">该分类下暂时没有内容呦~</view>
+<loading hidden="{{hidden}}">玩命加载中…</loading>

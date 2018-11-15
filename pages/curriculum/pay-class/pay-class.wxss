@@ -1,0 +1,275 @@
+page{
+  background-color: #f3f3f3;
+}
+
+.nav{
+  width: 100%;
+  height: 170rpx;
+  position: fixed;
+  left: 0rpx;
+  top: 0rpx;
+  z-index: 9999;
+}
+.nav-clone{
+  width: 100%;
+  height: 170rpx;
+}
+.nav .nav-bgc{
+  width: 100%;
+  height: 100%;
+}
+.nav-title{
+  font-size: 40rpx;
+  color: #fff;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+}
+.nav-back{
+  position:absolute;
+  left:0%;
+  top:60%;
+  transform:translateY(-50%);
+  width:80rpx;
+  height:80rpx;
+  padding:20rpx;
+  box-sizing:border-box;
+}
+.nav-back image{
+  width: 100%;
+  height: 100%;
+}
+.pay{
+  width: 100%;
+}
+.pay-header{
+  width: 100%;
+  text-align: center;
+  color: #f18833;
+  font-weight: bold;
+  padding-top: 70rpx;
+  margin-bottom: 77rpx;
+}
+.pay-header-name{
+  font-size: 34rpx;
+  margin-bottom: 30rpx;
+}
+.pay-header-price{
+  font-size: 80rpx;
+}
+.pay-header-price>text{
+  font-size: 24rpx;
+}
+/* 中间部分 */
+.pay-content{
+  border: 2rpx solid #c1c1c1;
+  border-radius: 10rpx;
+  width: 95%;
+  padding: 30rpx 65rpx;
+  box-sizing: border-box;
+  margin: 0 auto;
+  background-color: #fff;
+}
+.pay-content-top{
+  width: 100%;
+}
+.content-top-title{
+  font-size: 28rpx;
+  color: #707070;
+  margin-bottom: 60rpx;
+}
+.content-top-have{
+  width: 100%;
+  height: 100rpx;
+  position: relative;
+}
+.content-top-have-money{
+  position: absolute;
+  left: 25%;
+  top: 52%;
+  transform: translateY(-50%);
+  font-size: 32rpx;
+  color: #f18833;
+  font-weight: bold;
+}
+.content-top-have image{
+  width: 100%;
+  height: 100%;
+}
+.pay-content-bottom{
+  margin-top: 80rpx;
+}
+.content-top-title-other{
+  margin-bottom: 45rpx;
+}
+.content-top-pay{
+  display: flex;
+}
+.pay-logo{
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 40rpx;
+}
+.pay-logo image{
+  width: 100%;
+  height: 100%;
+}
+.pay-shuoming{
+
+}
+.pay-shuoming-title{
+  font-size: 30rpx;
+  color: #707070;
+  margin-bottom: 10rpx;
+}
+.pay-shuoming-neirong{
+  font-size: 24rpx;
+  color: #c1c1c1;
+}
+.pay-btn{
+  width: 77%;
+  border-radius: 10rpx;
+  background: -webkit-linear-gradient(left, rgb(254,143,16) , rgb(249,187,29));
+  background: -o-linear-gradient(right, rgb(254,143,16) , rgb(249,187,29));
+  background: -moz-linear-gradient(right, rgb(254,143,16) , rgb(249,187,29));
+  background: linear-gradient(to right, rgb(254,143,16) , rgb(249,187,29));
+  color: #fff;
+  font-size: 36rpx;
+  padding: 20rpx;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 120rpx;
+}
+/* 弹框 */
+.mask{
+  position: fixed;
+  left: 0rpx;
+  right: 0rpx;
+  top: 0rpx;
+  bottom: 0rpx;
+  background-color: #1e1e1e;
+  opacity: 0.7;
+  z-index: 999;
+}
+.pop-box{
+  position: fixed;
+  left: 0rpx;
+  bottom: 0rpx;
+  width: 100%;
+  background-color: #f3f3f3;
+  z-index: 9999;
+}
+.pop-box-other{
+  position: fixed;
+  left: 0rpx;
+  bottom: 0rpx;
+  width: 100%;
+  background-color: #f3f3f3;
+  z-index: 9999;
+  height: 60%;
+}
+.pop-box-header{
+  width: 100%;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  text-align: center;
+  background-color: #fff;
+  color: #f18833;
+}
+.pop-box-content{
+  width: 100%;
+  height:100%;
+  padding: 30rpx;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.pop-box-content-other{
+  width: 100%;
+  height:76%;
+  padding: 30rpx;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.pb-content-img{
+  width: 100%;
+  height: 150rpx;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+.pb-content-img image{
+  width: 90%;
+  height: 100%;
+}
+.pb-title{
+  position: absolute;
+  left: 7%;
+  top:45%;
+  transform:translateY(-50%);
+  font-size: 40rpx;
+  color: #f18833;
+}
+.pb-time{
+  position:absolute;
+  left:45%;
+  bottom:1%;
+  font-size:24rpx;
+  transform:translateX(-50%);
+  color: #fff;
+}
+.pb-price{
+  position:absolute;
+  right:17%;
+  top:45%;
+  transform:translateY(-50%);
+  font-size:36rpx;
+  font-weight:bold;
+  color:#f18833;
+}
+.pb-price text{
+  font-size: 60rpx;
+}
+.yuan{
+  width:50rpx;
+  height:50rpx;
+  position:absolute;
+  right:0%;
+  top:50%;
+  border-radius:50%;
+  transform:translateY(-50%);
+}
+.yuan image{
+  width: 100%;
+  height: 100%;
+}
+.couponSure-clone{
+  width:97%;
+  margin:0 auto;
+  height: 90rpx;
+  margin-bottom:30rpx;
+}
+.couponSure{
+  width:97%;
+  text-align:center;
+  color:#fff;
+  font-size:38rpx;
+  padding-top:20rpx;
+  padding-bottom:20rpx;
+  box-sizing:border-box;
+  border-radius:10rpx;
+  font-weight:bolder;
+  background:-webkit-linear-gradient(left, rgb(254,143,16) , rgb(249,187,29));
+  background:-o-linear-gradient(right, rgb(254,143,16) , rgb(249,187,29));
+  background:-moz-linear-gradient(right, rgb(254,143,16) , rgb(249,187,29));
+  background:linear-gradient(to right, rgb(254,143,16) , rgb(249,187,29));
+  margin:0 auto;
+  margin-bottom:30rpx;
+  position:absolute;
+  left:0rpx;
+  bottom:0rpx;
+}

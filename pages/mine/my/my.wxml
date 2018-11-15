@@ -1,0 +1,62 @@
+<view class="my">
+  <view class="my-header">
+    <image class="my-header-bgc" src="../../../static/img/my_01.png"></image>
+    <view class="my-header-box">
+      <view class="header-box-author">
+        <image src="{{hasUserInfo ? userInfo.avatarUrl : '../../../static/img/author.png'}}"></image>
+      </view>
+      <view class="header-box-authorDetail">
+        <view class="box-authorDetail-one">
+          <view class="authorDetail-one-name">{{userInfo.nickName}}</view>
+          <view wx:if="{{state}}" class="{{state ===1 ? 'authorDetail-one-img-other' : 'authorDetail-one-img'}}">
+            <image src="{{vipImg}}"></image>
+          </view>
+          <view wx:if="{{!state}}" class="authorDetail-one-img">
+            <image src="../../../static/img/novip.png"></image>
+          </view>
+        </view>
+        <view class="ifMember" wx:if="{{showIfMember}}">
+          <view class="ifMember-time" wx:if="{{state === 1}}">体验期限至：{{endTime}}</view>
+          <view class="ifMember-btn" wx:if="{{state === 1}}" bindtap="openRegisterSheng">升级</view>
+          <view class="ifMember-time" wx:if="{{state === 2}}">会员期限至：{{endTime}}</view>
+          <view class="ifMember-btn" wx:if="{{state === 2}}" bindtap="openRegisterAgain">续费</view>
+        </view>
+        <view class="ifMember" wx:if="{{!showIfMember}}">
+          <view class="ifMember-time ifMember-time-other">您还未注册会员！</view>
+          <view class="ifMember-btn" bindtap="openMember">加入</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="my-content">
+    <view class="content-first">
+      <view class="content-first-one" bindtap="openWallet">
+        <image src="../../../static/img/my_09.png"></image>
+        <view class="first-one-title">我的课程</view>
+      </view>
+      <view class="content-first-one" bindtap="openBonus">
+        <image src="../../../static/img/my_07.png"></image>
+        <view class="first-one-title">我的奖金</view>
+      </view>
+      <view class="content-first-one" bindtap="openCoupons">
+        <image src="../../../static/img/my_04.png"></image>
+        <view class="first-one-title">我的礼券</view>
+      </view>
+    </view>
+    <view class="content-first">
+      <view class="content-first-one" bindtap="openMember">
+        <image src="../../../static/img/my_16.png"></image>
+        <view class="first-one-title">邀请|会员</view>
+      </view>
+      <view class="content-first-one" bindtap="openAgent">
+        <image src="../../../static/img/my_18.png"></image>
+        <view class="first-one-title">校园合伙人</view>
+      </view>
+      <view class="content-first-one" bindtap="openMobilePhone">
+        <image src="../../../static/img/my_14.png"></image>
+        <view class="first-one-title">联系我们</view>
+      </view>
+    </view>
+  </view>
+</view>
+<loading hidden="{{hidden}}">玩命加载中…</loading>

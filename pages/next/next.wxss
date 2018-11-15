@@ -1,0 +1,100 @@
+.padd-l-20{
+  padding-left:20rpx 
+}
+.padd-r-20{
+  padding-right:20rpx 
+}
+.margin-t-25{
+    margin-top:25rpx;
+}
+.next-container{
+  padding-left:20rpx;
+  padding-right:20rpx    
+}
+
+/* 搜索框 */
+
+.search{
+  width: 100%;
+  border:1px solid #d5d5d5;
+  height: 78rpx;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: left;
+
+}
+.selectClass{
+  font-size: 30rpx;
+  line-height: 78rpx;
+  
+}
+.imgdown{
+  width: 23rpx;
+  height: 14rpx;
+  padding-left: 10rpx;
+  vertical-align: middle
+}
+.my{
+  height: 26rpx;
+  width: 26rpx;
+  vertical-align: middle
+}
+.position{
+  width: 37rpx;
+  height: 35rpx;
+  vertical-align: middle;
+  padding-top: 20rpx;
+  padding-left: 10rpx
+}
+.shuxian{
+  width: 1px;
+  height: 39rpx;
+  background: rgb(226, 226, 226);
+  margin-top: 20rpx
+}
+.search-input{
+  height: 100%;
+  padding-left: 10rpx
+}
+.placeholder-class{
+  font-size: 30rpx;
+  color: rgb(226, 226, 226)
+}
+.searchInput{
+  width: 50%;
+  display: flex;
+}
+
+/* Banner轮播图 */
+swiper-item{
+  border-radius:10px;
+  overflow: hidden;
+  height: 353rpx;
+}
+
+.swiperImg{
+  width: 100%;
+  height: 100%;
+  background: red
+}
+.gridLayout{
+  width: 100%;
+  height: 370rpx;
+  margin-top: 20rpx;
+  background:rgb(226, 226, 226);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gridLayout-item{
+  width: 33.3%;
+  height: 185rpx;
+ text-align: center
+}
+.gridLayout-item image{
+  width: 100%;
+  height: 100%;
+  display: block
+}
+.text-view{width: 100%;height: 335rpx;background: red;margin-bottom: 25rpx;border-radius: 10px}

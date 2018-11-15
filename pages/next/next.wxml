@@ -1,0 +1,59 @@
+<view class="nav">
+  <image class="nav-bgc" src="../../static/img/nav.png"></image>
+  <view class="nav-title">{{navbartitle}}</view>
+</view>
+<view class="nav-clone"></view>
+<!--index.wxml-->
+<view wx:if="{{hasUserInfo === 2}}">
+  <view class="content">
+    <view class="content-header">
+      <image src="../../static/img/logo_other.png"></image>
+    </view>
+    <view class="content-detail">
+      <view class="content-detail-li">
+        <image src='../../static/img/orange.png'></image>
+        <view>申请获取以下权限</view>
+      </view>
+      <view class="content-detail-li content-detail-li-other">
+        <image src='../../static/img/gray.png'></image>
+        <view>获得你的公开信息（昵称，头像等）</view>
+      </view>
+    </view>
+    <button class="content-footer" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+  </view>
+</view>
+<view if="{{hasUserInfo === 1}}">
+  <button open-type='contact' style='position:fixed;bottom:30px;width:100%' bindtap='callService'>呼叫客服</button>
+  <view class='next-container'>
+    <view class='search margin-t-25'>
+      <view class='selectClass help padd-l-20 padd-r-20'>
+        帮你选课
+        <image class='imgdown' src='../../static/newImg/home_down_icon.png'></image>
+      </view>
+      <view class='shuxian'></view>
+      <view class='searchInput'>
+        <image class='position' src='../../static/newImg/home_Location_icon.png'></image>
+        <input type='search' class='search-input' placeholder='尚未选择课程' placeholder-class='placeholder-class' bindtap='jumpSearch'></input>
+      </view>
+     
+    </view>
+    <swiper class='margin-t-25' indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+      <block wx:for="{{imgUrls}}" wx:key="item">
+        <swiper-item>
+          <image class='swiperImg'  style='backgroud:{{item}}'  class="slide-image"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='gridLayout'>
+    <view class='gridLayout-item' wx:for="{{gridLayout}}" wx:key="item">
+        <image src='{{item}}'></image>
+    </view>
+  </view>
+  <view class='next-container'>
+    <view class='margin-t-25 text-view'></view>
+    <view class='margin-t-25 text-view'></view>
+    <view class='margin-t-25 text-view'></view>
+    <view class='margin-t-25 text-view'></view>
+  </view>
+</view>

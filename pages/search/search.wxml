@@ -1,0 +1,36 @@
+<view class="nav">
+  <image class="nav-bgc" src="../../static/img/nav.png"></image>
+  <view class="nav-title">搜索</view>
+  <view class="nav-back" bindtap="goBack">
+    <image src="../../static/img/arrow_left.png"></image>
+  </view>
+</view>
+<view class="nav-clone"></view>
+
+<view class="search">
+  <view class="search-top">
+    <input placeholder="美课课程" auto-focus class="search-top-input" placeholder-class="input-placeholder" bindinput="searchValue"/>
+    <view class="search-top-btn" bindtap="sendSearch">搜索</view>
+  </view>
+  <view class="actBox">
+    <view class="activity-box" 
+    wx:for="{{curriculumList}}" 
+    wx:key=""
+    bindtap="openCurriculumDetail" 
+    data-sn="{{item.sn}}">
+      <view class="ab-image">
+        <image class="ab-image-one" src="{{item.courPic}}"></image>
+        <image class="ab-image-two" src="{{item.optiType == 0 ? '' : '../../static/img/vip.png'}}"></image>
+      </view>
+      <view class="ab-detail">
+        <view class="ab-detail-one">{{item.title}}</view>
+        <view class="ab-detail-two">{{item.desr}}</view>
+        <view class="ab-detail-three">满<text>{{item.min}}</text>人活动开启</view>
+        <view class="ab-detail-four">
+          <view class="ad-four">￥<text class="text1">{{item.price}}</text> / vip会员免费</view>
+          <view class="ad-four-two">{{item.courCount}} / {{item.max}}人</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

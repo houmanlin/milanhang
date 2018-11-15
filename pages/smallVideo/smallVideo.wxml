@@ -1,0 +1,35 @@
+<view class="nav">
+  <image class="nav-bgc" src="../../static/img/nav.png"></image>
+  <image class="nav-logo" src="../../static/img/logo.png"></image>
+  <view class="nav-back" bindtap="goBack">
+    <image src="../../static/img/arrow_left.png"></image>
+  </view>
+</view>
+<view class="nav-clone"></view>
+
+<view class="order-search-third">
+  <scroll-view scroll-x="true" class="scroll-box">
+    <view class="scroll-box-blank"></view>
+    <block wx:for="{{tabLists}}" wx:for-item="tabList" wx:key="{{tabList.key}}">
+      <view class="{{tabList.isSelect?'scrollClick':'scrollNoClick'}}" bindtap="changeTab" wx:key="{{tabList.key}}" data-item="{{tabList}}" data-type="{{tabList.type}}">{{tabList.name}}</view>
+    </block>
+    <view class="scroll-box-blank"></view>
+  </scroll-view>
+</view>
+
+<view class="video-father" wx:if="{{!showNot}}">
+  <view class="video-border" wx:for="{{courseList}}" wx:for-index="idx"  wx:key="">
+    <view class="video-box">
+      <view class="video-item">
+        <video custom-cache="{{false}}" bindended="openVideo" wx:if="{{idx==playIndex}}" id="video{{idx}}" show-center-play-btn="{{videoFalse}}" src="{{item.viPath}}" controls="true" objectFit="contain"></video>
+        <image class="video-cover" wx:if="{{idx!=playIndex}}" src="{{item.viCover}}"></image>
+        <image class="video-play-btn" wx:if="{{idx!=playIndex}}" data-index="{{idx}}" bindtap="videoPlay" src="../../static/img/play.png"></image>
+      </view>
+      <view class="video-detail">
+        <view class="video-detail-title"><text>【{{titleName}}】</text>{{item.viTitle}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{showNot}}" class="showNot">该分类下暂时没有内容呦~</view>
+<loading hidden="{{hidden}}">玩命加载中…</loading>

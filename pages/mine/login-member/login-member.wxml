@@ -1,0 +1,30 @@
+<view class="nav">
+  <image class="nav-bgc" src="../../../static/img/nav.png"></image>
+  <view class="nav-back" bindtap="goBack">
+    <image src="../../../static/img/arrow_left.png"></image>
+  </view>
+</view>
+<view class="nav-clone"></view>
+<view class="login">
+  <view class="login-header">
+    <image src="../../../static/img/logo_other.png"></image>
+  </view>
+  <view class="login-content">
+    <view class="login-phone-img">
+      <image src="../../../static/img/1.png"></image>
+    </view>
+    <input type="number" placeholder-class="input-placeholder" placeholder="手机号码" auto-focus class="input-phone" bindinput="mobileInput"/>
+  </view>
+  <view class="login-btn">
+    <view class="login-content login-content-other">
+      <view class="login-code-img">
+        <image src="../../../static/img/2.png"></image>
+      </view>
+      <input type="number" placeholder-class="input-placeholder" placeholder="验证码" class="input-code" bindinput="codeInput"/>
+    </view>
+    <button class="get-code" bindtap="getCode" disabled="{{disabled}}">{{name}}</button>
+  </view>
+  <view class="login-footer" bindtap='btnclick'>
+    <view>登 录</view>
+  </view>
+</view>

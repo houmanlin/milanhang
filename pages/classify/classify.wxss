@@ -1,0 +1,209 @@
+page {
+  background: #ffffff;
+}
+
+.nav {
+  width: 100%;
+  height: 170rpx;
+  position: fixed;
+  left: 0rpx;
+  top: 0rpx;
+  z-index: 9999;
+}
+
+.nav-clone {
+  width: 100%;
+  height: 170rpx;
+}
+
+.nav .nav-bgc {
+  width: 100%;
+  height: 100%;
+}
+
+.nav-logo {
+  width:470rpx;
+  height:100rpx;
+  position:absolute;
+  left:50%;
+  top:64%;
+  transform:translate(-50%, -50%);
+}
+
+/* 分类 */
+.classify {
+  width: 100%;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  color: #939393;
+  padding: 600rpx 0rpx;
+  box-sizing: border-box;
+}
+
+/*左侧栏主盒子*/
+.nav_left {
+  display: inline-block;
+  width: 25%;
+  height: 100%;
+  position: fixed;
+  top: 170rpx;
+  left: 0;
+  background: #eeeeee;
+  text-align: center;
+  color: #7e7e7e;
+}
+
+/*左侧栏list的item*/
+.nav_left .nav_left_items {
+  height: 40px;
+  line-height: 40px;
+  padding: 6px 0;
+  border-bottom: 1px solid #dedede;
+  font-size: 14px;
+}
+
+/*左侧栏list的item被选中时*/
+.nav_left .nav_left_items.active {
+  background: #fff;
+  color: #fe8f10;
+}
+
+/*右侧栏主盒子*/
+.nav_right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  flex: 1;
+  width: 75%;
+  /* height: 1070rpx; */
+  padding: 0rpx 10rpx 10rpx 10px;
+  box-sizing: border-box;
+  background: #fff;
+  height: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+/*右侧栏list的item*/
+.nav_right_title {
+  color: #000000;
+  font-size: 32rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  width: 100%;
+}
+
+.nav_right_content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nav_right .nav_right_items {
+  width: 31%;
+  text-align: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  margin-right: 2%;
+  margin-bottom: 2%;
+}
+
+.nav_right .nav_right_items text {
+  display: block;
+  font-size: 28rpx;
+  color: #000000;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.nodata_text {
+  color: #000000;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+/* 推荐课程 */
+.actBox{
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.activity-box{
+  width: 100%;
+  display: flex;
+  margin-bottom: 10rpx;
+}
+
+.ab-image{
+  width:50%;
+  height:220rpx;
+  margin-right:30rpx;
+  overflow: hidden;
+  border-radius: 10rpx;
+  position: relative;
+}
+.ab-image .ab-image-one{
+  width: 100%;
+  height: 100%;
+}
+.ab-image-two{
+  width:70rpx;
+  height:40rpx;
+  position:absolute;
+  left:5%;
+  top:5%;
+  z-index:999;
+}
+.ab-detail{
+  width: 50%;
+  padding-top: 25rpx;
+  box-sizing: border-box;
+}
+.ab-detail-one{
+  color: #0a0a0a;
+  font-size: 28rpx;
+  margin-bottom: 10rpx;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+.ab-detail-two{
+  color: #797979;
+  font-size: 22rpx;
+  margin-bottom: 10rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+.ab-detail-three{
+  color: #797979;
+  font-size: 22rpx;
+  margin-bottom: 10rpx;
+}
+.ab-detail-three>text{
+  font-size: 24rpx;
+}
+.ab-detail-four{
+  font-size: 18rpx;
+  color: #cf595f;
+  position: relative;
+  width: 95%;
+}
+.ad-four>.text1{
+  font-size: 30rpx;
+}
+.ad-four-two{
+  position: absolute;
+  right: 0rpx;
+  bottom: 0rpx;
+}

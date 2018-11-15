@@ -1,0 +1,77 @@
+{
+  "pages":[
+    "pages/next/next",
+    "pages/index/index",
+    "pages/mine/coupons/coupons",
+    "pages/mine/nocoupons/nocoupons",
+    "pages/mine/my/my",
+    "pages/mine/translate/translate",
+    "pages/mine/translateT/translateT",
+    "pages/mine/member/member",
+    "pages/mine/register-member/register-member",
+    "pages/mine/register-again/register-again",
+    "pages/mine/register-sheng/register-sheng",
+    "pages/mine/agent/agent",
+    "pages/mine/login-member/login-member",
+    "pages/mine/bonus/bonus",
+    "pages/mine/bank/bank",
+    "pages/mine/bankT/bankT",
+    "pages/mine/wallet/wallet",
+    "pages/smallVideo/smallVideo",
+    "pages/login/login",
+    "pages/search/search",
+    "pages/activity/activity/activity",
+    "pages/activity/recruit/recruit",
+    "pages/activity/pay/pay",
+    "pages/activity/price-null/price-null",
+    "pages/curriculum/curriculum/curriculum",
+    "pages/curriculum/practice/practice",
+    "pages/curriculum/curriculum-detail/curriculum-detail",
+    "pages/curriculum/pay-class/pay-class",
+    "pages/curriculum/price-null/price-null",
+    "pages/classify/classify",
+    "pages/all/all/all",
+    "pages/all/Invitation/Invitation",
+    "pages/all/curriculum-other/curriculum-other"
+ 
+  ],
+  "window":{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ec672e",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "white",
+    "navigationStyle":"custom"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/next/next",
+        "text": "首页",
+        "iconPath": "./static/img/normal1.png",
+        "selectedIconPath": "./static/img/pass1.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "课程",
+        "iconPath": "./static/img/kecheng.png",
+        "selectedIconPath": "./static/img/kechengselect.png"
+      },
+      
+      {
+        "pagePath": "pages/all/all/all",
+        "text": "会员",
+        "iconPath": "./static/img/normal2.png",
+        "selectedIconPath": "./static/img/pass2.png"
+      },
+      {
+        "pagePath": "pages/mine/my/my",
+        "text": "我的",
+        "iconPath": "./static/img/normal3.png",
+        "selectedIconPath": "./static/img/pass3.png"
+      }
+    ],
+    "color": "#1e1e1e",
+    "selectedColor": "#ff7f0d",
+    "position": "bottom"
+  }
+}

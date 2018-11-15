@@ -1,0 +1,32 @@
+<view class="nav">
+  <image class="nav-bgc" src="../../../static/img/nav.png"></image>
+  <view class="nav-title">会员续费</view>
+  <view class="nav-back" bindtap="goBack">
+    <image src="../../../static/img/arrow_left.png"></image>
+  </view>
+</view>
+<view class="nav-clone"></view>
+<view class="regmem">
+  <view class="regmem-box">
+    <view class="regmem-box-header"></view>
+    <view class="regmem-box-content">
+      <view class="box-content-one">
+        <image src="../../../static/img/register_03.png" class="content-one-image"></image>
+        <view class="content-one-name">会员年限</view>
+        <view class="content-one-picker">
+          <picker bindchange="yearChange" value="{{search.yearType}}" range="{{memberYearList}}" range-key="valueMeaning">
+            <view class="picker">
+              {{memberYearList[yearIndex].valueMeaning}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="box-content-one box-content-one-other">
+        <image src="../../../static/img/register_06.png" class="content-one-image"></image>
+        <view class="content-one-name">金额<text></text></view>
+        <view class="content-one-price">{{moneyValue}}元</view>
+      </view>
+    </view>
+    <view class="regmem-box-btn" bindtap="sendRegister">确认支付</view>
+  </view>
+</view>

@@ -1,0 +1,75 @@
+<!-- 课程页 -->
+<view class="nav">
+  <image class="nav-bgc" src="../../../static/img/nav.png"></image>
+  <view class="nav-title">美课活动</view>
+  <view class="nav-back" bindtap="goBack">
+    <image src="../../../static/img/arrow_left.png"></image>
+  </view>
+</view>
+<view class="nav-clone"></view>
+<view class="mask" wx:if="{{showMask}}" bindtap="closeList"></view>
+<view class="tabAll">
+  <view class="tabAll-top">
+    <view class="tt-li" bindtap="clickTabOne" style="color:{{colorOne}}">
+      <view>综合排序</view>
+      <image src="{{clickDownOne}}"></image>
+    </view>
+    <view class="tt-li" bindtap="clickTabTwo" style="color:{{colorTwo}}">
+      <view>位置筛选</view>
+      <image src="{{clickDownTwo}}"></image>
+    </view>
+    <view class="tt-li" bindtap="clickTabThree" style="color:{{colorThree}}">
+      <view>位置筛选</view>
+      <image src="{{clickDownThree}}"></image>
+    </view>
+  </view>
+  <view class="ttli-box">
+    <view 
+    class="ttb-li"
+    wx:for="{{sortLists}}"
+    wx:key=""
+    data-item="{{item}}"
+    bindtap="openSortLists"
+    wx:if="{{showSort}}"
+    >{{item.name}}</view>
+  </view>
+  <view class="ttli-box-two">
+    <view 
+    class="ttbt-li"
+    wx:for="{{screenLists}}"
+    wx:key=""
+    data-item="{{item}}"
+    bindtap="openScreenLists"
+    wx:if="{{showScreen}}"
+    >{{item.name}}</view>
+  </view>
+</view>
+<view class="tabAll-clone"></view>
+
+<view class="curriculum" wx:if="{{!showNot}}">
+  <view class=""></view>
+  <view class="actBox">
+    <view class="activity-box" 
+    wx:for="{{activityList}}" 
+    wx:key=""
+    bindtap="openRecruit" 
+    data-sn="{{item.sn}}">
+      <view class="acbox">
+        <view class="ab-image">
+          <image src="{{item.actiPic}}"></image>
+        </view>
+        <view class="ab-detail">
+          <view class="ab-detail-one">{{item.title}}</view>
+          <view class="ab-detail-two">{{item.desr}}</view>
+          <view class="ab-detail-three">满<text>{{item.min}}</text>人活动开启</view>
+          <view class="ab-detail-four">
+            <view class="ad-four">￥<text class="text1">{{item.price}}</text> / vip会员免费</view>
+            <view class="ad-four-two">{{item.acti_count}} / {{item.max}}人</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{showNot}}" class="showNot">该分类下暂时没有内容呦~</view>
+<loading hidden="{{hidden}}">玩命加载中…</loading>

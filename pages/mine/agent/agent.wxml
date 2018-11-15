@@ -1,0 +1,45 @@
+<view class="nav">
+  <image class="nav-bgc" src="../../../static/img/nav.png"></image>
+  <view class="nav-title">校园合伙人申请</view>
+  <view class="nav-back" bindtap="goBack">
+    <image src="../../../static/img/arrow_left.png"></image>
+  </view>
+</view>
+<view class="nav-clone"></view>
+<view class="agent">
+  <view class="agent-header">
+    <view class="agent-header-title">校园合伙人入驻申请表</view>
+  </view>
+  <view class="agent-content">
+    <view class="agent-content-top">美课优选面向沈阳各大高校招募校园合伙人，负责美课优选平台在校园的推广任务，并享有该业务的高额提成，美课优选，和你一起成长。(美课可提供实习证明)</view>
+    <view class="agent-content-content">
+      <view class="agent-cc-top">申请类型</view>
+      <view class="agent-cc-bottom">
+        <view class="yuan"></view>
+        <view class="agent-cc-bottom-name">校园合伙人</view>
+      </view>
+      <view class="agent-cc-top">个人信息</view>
+    </view>
+    <view class="agent-content-bottom">
+      <view class="acb-li">
+        <view class="acb-li-title">您的姓名:</view>
+        <input bindinput="usernameInput"/>
+      </view>
+      <view class="acb-li">
+        <view class="acb-li-title">所在大学:</view>
+        <input bindinput="schoolInput"/>
+      </view>
+      <view class="acb-li">
+        <view class="acb-li-title">手机号码:</view>
+        <input type="number" bindinput="mobileInput"/>
+      </view>
+      <view class="acb-li acb-li-other">
+        <view class="acb-li-title">验证码:</view>
+        <input type="number" bindinput="codeInput"/>
+        <button class="get-code" bindtap="getCode" disabled="{{disabled}}">{{name}}</button>
+      </view>
+    </view>
+  </view>
+  <view class="agent-btn" bindtap="btnclick">确认</view>
+  <view class="block"></view>
+</view>

@@ -1,0 +1,21 @@
+<view class="nav">
+  <image class="nav-bgc" src="../../../static/img/nav.png"></image>
+  <image class="nav-logo" src="../../../static/img/logo.png"></image>
+  <view class="nav-back" bindtap="goBack">
+    <image src="../../../static/img/arrow_left.png"></image>
+  </view>
+</view>
+<view class="nav-clone"></view>
+<view class="pay">
+  <view class="pay-header">
+    <view class="pay-header-name">{{activityname}}</view>
+    <view class="pay-header-price">￥0</view>
+  </view>
+  <view class="pay-content">
+    <view class="pay-content-top">
+      <view class="content-top-title">优惠方式：</view>
+      <view class="content-top-no">没有更多优惠了呦~~</view>
+    </view>
+  </view>
+  <view class="pay-btn" bindtap="goBackActivity">确认报名</view>
+</view>

@@ -1,0 +1,37 @@
+
+<view class="nav">
+  <image class="nav-bgc" src="../../../static/img/nav.png"></image>
+  <view class="nav-title">邀约好友</view>
+  <view class="nav-back" bindtap="goBack">
+    <image src="../../../static/img/arrow_left.png"></image>
+  </view>
+</view>
+<view class="nav-clone"></view>
+<view class="invitation">
+  <view class="invitation-top">
+    <view class="invitation-top-img">
+      <image src="http://img.milanhang.com/image/share/22.png"></image>
+    </view>
+  </view>
+  <view class="invitation-content">
+    <view class="ic-one">邀约好友获得参与票数</view>
+    <view>1.1元体验会员需邀约几个好友即可获得会员活动资格(VIP会员免费)。</view>
+    <view>2.邀约1名好友算1票。点击下方微信图标邀请微信好友加入，好友注册成功，平台自动增加你的票数。</view>
+    <view>3.达到指定票数，会员活动自动开启报名通道，即可报名参与。</view>
+  </view>
+  <view class="invitation-footer">
+    <view class="invitation-footer-top">
+      <view class="if-top-line"></view>
+      <view class="if-top-text">邀请好友加入</view>
+      <view class="if-top-line-other"></view>
+    </view>
+    <view class="invitation-footer-bottom">
+      <view class="if-bottom-box">
+        <image src="../../../static/img/weixin2.png"></image>
+        <view class="if-bottom-text">微信好友</view>
+        <button class="at-btn" open-type="share"></button>
+      </view>
+      <view class="if-bottom-box-block"></view>
+    </view>
+  </view>
+</view>

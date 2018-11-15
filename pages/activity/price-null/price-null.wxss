@@ -1,0 +1,132 @@
+page{
+  background-color: #f3f3f3;
+}
+.nav {
+  width: 100%;
+  height: 170rpx;
+  position: fixed;
+  left: 0rpx;
+  top: 0rpx;
+  z-index: 9999;
+}
+
+.nav-clone {
+  width: 100%;
+  height: 170rpx;
+}
+
+.nav .nav-bgc {
+  width: 100%;
+  height: 100%;
+}
+
+.nav-logo {
+  width:470rpx;
+  height:100rpx;
+  position:absolute;
+  left:50%;
+  top:64%;
+  transform:translate(-50%, -50%);
+}
+.nav-back{
+  position:absolute;
+  left:0%;
+  top:60%;
+  transform:translateY(-50%);
+  width:80rpx;
+  height:80rpx;
+  padding:20rpx;
+  box-sizing:border-box;
+}
+.nav-back image{
+  width: 100%;
+  height: 100%;
+}
+.pay{
+  width: 100%;
+}
+.pay-header{
+  width: 100%;
+  text-align: center;
+  color: #f18833;
+  font-weight: bold;
+  padding-top: 70rpx;
+  margin-bottom: 77rpx;
+}
+.pay-header-name{
+  font-size: 34rpx;
+  margin-bottom: 30rpx;
+}
+.pay-header-price{
+  font-size: 80rpx;
+}
+/* 中间部分 */
+.pay-content{
+  border: 2rpx solid #c1c1c1;
+  border-radius: 10rpx;
+  width: 95%;
+  padding: 30rpx 65rpx;
+  box-sizing: border-box;
+  margin: 0 auto;
+  background-color: #fff;
+}
+.pay-content-top{
+  width: 100%;
+}
+.content-top-title{
+  font-size: 28rpx;
+  color: #707070;
+  margin-bottom: 60rpx;
+}
+.content-top-have{
+  width: 100%;
+  height: 100rpx;
+}
+.content-top-have image{
+  width: 100%;
+  height: 100%;
+}
+.pay-content-bottom{
+  margin-top: 80rpx;
+}
+.content-top-title-other{
+  margin-bottom: 45rpx;
+}
+.content-top-pay{
+  display: flex;
+}
+.pay-logo{
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 40rpx;
+}
+.pay-logo image{
+  width: 100%;
+  height: 100%;
+}
+.pay-shuoming{
+
+}
+.pay-shuoming-title{
+  font-size: 30rpx;
+  color: #707070;
+  margin-bottom: 10rpx;
+}
+.pay-shuoming-neirong{
+  font-size: 24rpx;
+  color: #c1c1c1;
+}
+.pay-btn{
+  width: 77%;
+  border-radius: 10rpx;
+  background: -webkit-linear-gradient(left, rgb(254,143,16) , rgb(249,187,29));
+  background: -o-linear-gradient(right, rgb(254,143,16) , rgb(249,187,29));
+  background: -moz-linear-gradient(right, rgb(254,143,16) , rgb(249,187,29));
+  background: linear-gradient(to right, rgb(254,143,16) , rgb(249,187,29));
+  color: #fff;
+  font-size: 36rpx;
+  padding: 20rpx;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 120rpx;
+}

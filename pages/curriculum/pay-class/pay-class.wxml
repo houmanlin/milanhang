@@ -1,0 +1,55 @@
+<view class="nav">
+  <image class="nav-bgc" src="../../../static/img/nav.png"></image>
+  <view class="nav-title">支付</view>
+  <view class="nav-back" bindtap="goBack">
+    <image src="../../../static/img/arrow_left.png"></image>
+  </view>
+</view>
+<view class="nav-clone"></view>
+<view class="pay">
+  <view class="pay-header">
+    <view class="pay-header-name">{{curriculumname}}</view>
+    <view class="pay-header-price">￥{{price}}</view>
+  </view>
+  <view class="pay-content">
+    <view class="pay-content-top">
+      <view class="content-top-title">优惠方式：</view>
+      <view class="content-top-have" bindtap="gotoCoupons" wx:if="{{ifMember && !ifNotCoupons}}">
+        <image src="../../../static/img/pay_03.png"></image>
+        <view class="content-top-have-money">{{moneyName}}</view>
+      </view>
+      <view class="content-top-no" wx:if="{{ifMember && ifNotCoupons}}">优惠券用光光啦~</view>
+      <view class="content-top-no" wx:if="{{!ifMember}}">成为会员才可享受更多优惠哦~</view>
+    </view>
+    <view class="pay-content-bottom">
+      <view class="content-top-title content-top-title-other">支付方式：</view>
+      <view class="content-top-pay">
+        <view class="pay-logo">
+          <image src="../../../static/img/pay_03_03.png"></image>
+        </view>
+        <view class="pay-shuoming">
+          <view class="pay-shuoming-title">微信支付</view>
+          <view class="pay-shuoming-neirong">推荐已安装微信客户端的用户使用</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="pay-btn" bindtap="goBackActivity">确认支付</view>
+  <view class="mask" wx:if="{{showPopBox}}" bindtap="closePopBox"></view>
+  <view class="{{couponsList.length > 4 ? 'pop-box-other' : 'pop-box'}}" wx:if="{{showPopBox}}">
+    <view class="pop-box-header">我的礼券</view>
+    <view class="{{couponsList.length > 4 ? 'pop-box-content-other' : 'pop-box-content'}}">
+      <view class="pb-content-img" wx:for="{{couponsList}}" wx:key="" bindtap="useCoupons" id="{{index}}">
+        <image src="../../../static/img/payCan.png"></image>
+        <view class="pb-title">{{item.title}}</view>
+        <view class="pb-time">有效期至：{{item.end_time}}</view>
+        <view class="pb-price">￥<text>{{item.coupon_money}}</text></view>
+        <view class="yuan">
+          <image src="{{index == clickIndex ? '../../../static/img/duihao.png' : '../../../static/img/yuanquan.png'}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class="couponSure-clone"></view>
+    <view class="couponSure" bindtap="makeSureCoupons">确定</view>
+  </view>
+</view>

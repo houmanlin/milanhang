@@ -1,0 +1,23 @@
+<view class="nav">
+  <image class="nav-bgc" src="../../../static/img/nav.png"></image>
+  <view class="nav-title">账单明细</view>
+  <view class="nav-back" bindtap="goBack">
+    <image src="../../../static/img/arrow_left.png"></image>
+  </view>
+</view>
+<view class="nav-clone"></view>
+
+<view class="translate" wx:if="{{!showNot}}">
+  <view class="translate-li" wx:for="{{billLists}}" wx:key="">
+    <view class="translate-li-top">
+      <view class="tl-top-left">奖金提现</view>
+      <view class="tl-top-left">-{{item.money}}</view>
+    </view>
+    <view class="translate-li-top translate-li-top-other">
+      <view class="tl-top-left">{{item.applyTime}}</view>
+      <view class="tl-top-left">{{state}}</view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{showNot}}" class="showNot">暂无账单哟~</view>
+<loading hidden="{{hidden}}">玩命加载中…</loading>

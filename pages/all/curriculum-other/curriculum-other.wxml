@@ -1,0 +1,75 @@
+<view class="nav">
+  <image class="nav-bgc" src="../../../static/img/nav.png"></image>
+  <image class="nav-logo" src="../../../static/img/logo.png"></image>
+  <view class="nav-back" bindtap="goBack">
+    <image src="../../../static/img/arrow_left.png"></image>
+  </view>
+</view>
+<view class="nav-clone"></view>
+<view class="recruit" wx:for="{{curriculumList}}" wx:key="">
+  <view class="recruit-header">
+    <view class="recruit-header-box">
+      <view class="header-box-image">
+        <!-- <image src="{{titleImg}}"></image> -->
+        <!-- <image src="../../../static/img/image_03.png"></image> -->
+        <image src="{{activetype == 1 ? item.courPic:item.actiPic}}"></image>
+        <view class="header-box-title"></view>
+        <view class="header-box-real">{{item.title}}</view>
+      </view>
+      <view class="header-box-content">
+        <view class="box-content-top">{{item.desr}}</view>
+        <view class="box-content-bottom">
+          <view class="content-bottom-left">报名时间截止至{{item.endTime}}</view>
+          <view class="content-bottom-right">{{activetype == 1 ? item.courCount:item.actiCount}}/<text>{{item.max}}人</text></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="border"></view>
+
+  <view class="recruit-bottom">
+    <view class="recruit-bottom-top">
+      <view class="bottom-top-box">
+        <view class="top-box-image">
+          <!-- <video custom-cache="{{false}}" id="bigVideo" wx:if="{{!showVidImg}}" bindended="openVideo" show-center-play-btn="{{videoFalse}}" src="http://pg47zs8p2.bkt.clouddn.com/video/type/001.mp4" controls="true" objectFit="contain"></video> -->
+          <video custom-cache="{{false}}" id="bigVideo" wx:if="{{!showVidImg}}" bindended="openVideo" show-center-play-btn="{{videoFalse}}" src="{{activetype==1?item.courVideo:actiVideo}}" controls="true" objectFit="contain"></video>
+          <!-- <image class="video-cover" wx:if="{{showVidImg}}" src="../../../static/img/1.jpg"></image> -->
+          <image class="video-cover" wx:if="{{showVidImg}}" src="{{activetype == 1?item.courVideoPic:item.actiVideoPic}}"></image>
+          <image class="video-play-btn" wx:if="{{showVidImg}}" bindtap="videoPlay" src="../../../static/img/play.png"></image>
+        </view>
+      </view>
+      <!-- <view class="top-box-title">{{item.courAbs}}</view> -->
+      <view class="top-box-title">课程的简介</view>
+      <view class="allImage">
+        <image wx:for="{{activetype==1?item.coursePaths:item.actiPaths}}" wx:key="" src="{{activetype==1?item.coursePath:item.actiPath}}" mode="widthFix"></image>
+      </view>
+      <view class="recruit-content">
+        <view class="recruit-content-top">
+          <view class="content-top-title">已报名</view>
+          <view class="top-small-border"></view>
+        </view>
+        <view class="recruit-content-bottom">
+          <view class="scroll">
+            <view class="content-bottom-li" wx:for="{{item.max}}" wx:key="item.max">
+              <image src="{{imgList[index]}}" wx:if="{{imgList[index]}}" wx:key="imgList"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="recruit-bottom-bottom-clone"></view>
+    <view class="recruit-bottom-bottom">
+      <view class="border"></view>
+      <view class="bottom-bottom-detail">
+        <view class="bottom-detail-left">
+          <view class="afterPrice">试听：<text>￥{{item.price}}</text></view>
+          <view class="beforePrice">（vip会员免费）</view>
+        </view>
+        <view class="bottom-detail-right" bindtap="openLogin" data-price="{{item.price}}" data-curriculumid="{{curriculumid}}" data-curriculumname="{{curriculumname}}">
+          <image src="{{signImg}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<loading hidden="{{hidden}}">玩命加载中…</loading>

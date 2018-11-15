@@ -1,0 +1,218 @@
+<!--index.wxml-->
+<view wx:if="{{hasUserInfo === 2}}">
+  <view class="nav">
+    <image class="nav-bgc" src="../../static/img/nav.png"></image>
+  </view>
+  <view class="nav-clone"></view>
+  <view class="content">
+    <view class="content-header">
+      <image src="../../static/img/logo_other.png"></image>
+    </view>
+    <view class="content-detail">
+      <view class="content-detail-li">
+        <image src='../../static/img/orange.png'></image>
+        <view>申请获取以下权限</view>
+      </view>
+      <view class="content-detail-li content-detail-li-other">
+        <image src='../../static/img/gray.png'></image>
+        <view>获得你的公开信息（昵称，头像等）</view>
+      </view>
+    </view>
+    <button class="content-footer" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+  </view>
+</view>
+
+<!-- 授权后 -->
+<block wx:if="{{hasUserInfo === 1}}">
+  <view class="nav">
+    <image class="nav-bgc" src="../../static/img/nav.png"></image>
+    <image class="nav-logo" src="../../static/img/logo.png"></image>
+  </view>
+  <view class="nav-clone"></view>
+
+  <view class="home">
+    <!-- <view class="search">
+      <view class="search-top">
+        <image src="../../static/img/dingwei.png"></image>
+        <text>沈阳</text>
+      </view>
+      <view class="search-text" bindtap="gotoSearch">
+        <image src="../../static/img/fangdajing.png"></image>
+        <view>优选课程</view>
+      </view>
+    </view> -->
+    <view class="activity_top">
+      <swiper autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+        <block wx:for="{{imgUrls}}" wx:key="imgUrls">
+          <swiper-item>
+            <image src="{{item.picPath}}" class="slide-image" mode="scaleToFill"/>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!-- <view class="bb">
+      <image src="../../static/img/333.jpg" bindtap="openMember"></image>
+      <view class="bb-box bb-box-other" bindtap="openMember">
+        <image class="imageV" src="../../static/img/v.png"></image>
+        <view class="bb-left">
+          <view>美课</view>
+          <view>会员</view>
+        </view>
+        <view class="bb-right">MEMBER</view>
+      </view>
+      <view class="bb-box" bindtap="openVideo">
+        美 课 视 频
+        <image class ="imagePhoto" src="../../static/img/photo.png"></image>
+      </view>
+      <image src="../../static/img/222.jpg" bindtap="openVideo"></image>
+    </view> -->
+
+    <!-- 活动 -->
+    <view class="activity">
+      <view class="scrollAll">
+        <view class="scroll-box">
+          <view class="scroll-box-blank"></view>
+          <block wx:for="{{actLists}}" wx:for-item="actList" wx:key="{{actList.key}}">
+            <view class="{{actList.isSelect?'scrollClick':'scrollNoClick'}}" bindtap="changeActTab" wx:key="{{actList.key}}" data-item="{{actList}}" data-type="{{actList.type}}">{{actList.name}}</view>
+          </block>
+          <view class="scroll-box-blank"></view>
+        </view>
+        <!-- <view class="shenglue" bindtap="openActivity">
+          <image src="../../static/img/shenglue.png"></image>
+        </view> -->
+      </view>
+      <view class="actBox" wx:if="{{id == '1'}}">
+        <view class="activity-box" 
+        wx:for="{{activityList}}" 
+        wx:key=""
+        wx:for-index="idx" 
+        wx:if="{{idx<3}}"
+        bindtap="openRecruit" 
+        data-sn="{{item.sn}}">
+          <view class="ab-image">
+            <image class="ab-image-one" src="{{item.actiPic}}"></image>
+            <image class="ab-image-two" src="{{item.optiType == 0 ? '' : '../../static/img/vip.png'}}"></image>
+          </view>
+          <view class="ab-detail">
+            <view class="ab-detail-one">{{item.title}}</view>
+            <view class="ab-detail-two">{{item.desr}}</view>
+            <view class="ab-detail-three">满<text>{{item.min}}</text>人活动开启</view>
+            <view class="ab-detail-four">
+              <view class="ad-four">￥<text class="text1">{{item.price}}</text> / 会员优惠券抵扣</view>
+              <view class="ad-four-two">{{item.acti_count}} / {{item.max}}人</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="actBox" wx:if="{{id != '1'}}">
+        <view class="activity-box" 
+        wx:for="{{curriculumListTui}}" 
+        wx:key=""
+        wx:for-index="idx" 
+        wx:if="{{idx<3}}"
+        bindtap="openCurriculumDetail" 
+        data-sn="{{item.sn}}">
+          <view class="ab-image">
+            <image class="ab-image-one" src="{{item.courPic}}"></image>
+            <image class="ab-image-two" src="{{item.optiType == 0 ? '' : '../../static/img/vip.png'}}"></image>
+          </view>
+          <view class="ab-detail">
+            <view class="ab-detail-one">{{item.title}}</view>
+            <view class="ab-detail-two">{{item.desr}}</view>
+            <view class="ab-detail-three">满<text>{{item.min}}</text>人活动开启</view>
+            <view class="ab-detail-four">
+              <view class="ad-four">￥<text class="text1">{{item.price}}</text> / vip会员免费</view>
+              <view class="ad-four-two">{{item.courCount}} / {{item.max}}人</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="span">美课课程
+      <image src="../../static/img/class2.png"></image>
+    </view>
+    <!-- 课程 -->
+    <view class="course">
+      <view class="scrollAll">
+        <scroll-view scroll-x="true" class="scroll-box">
+          <view class="scroll-box-blank"></view>
+          <block wx:for="{{courLists}}" wx:for-item="courList" wx:key="{{courList.key}}">
+            <view class="{{courList.isSelect?'scrollClick':'scrollNoClick'}}" bindtap="changeCourTab" wx:key="{{courList.key}}" data-item="{{courList}}" data-type="{{courList.type}}" data-isSelect="{{courList.isSelect}}">{{courList.name}}</view>
+          </block>
+          <view class="scroll-box-blank-li"></view>
+        </scroll-view>
+        <view class="shenglue" bindtap="openCurriculum">
+          <image src="../../static/img/shenglue.png"></image>
+        </view>
+      </view>
+      <view class="courBox">
+        <view class="course-box">
+          <view class="cb-li" 
+          wx:for="{{curriculumList}}" 
+          wx:key="" 
+          wx:for-index="idx" 
+          wx:if="{{idx<4}}"
+          bindtap="openCurriculumDetail" 
+          data-sn="{{item.sn}}">
+            <view class="cb-li-img">
+              <image class="cb-li-img-one" src="{{item.courPic}}"></image>
+              <image class="ab-image-two" src="{{item.optiType == 0 ? '' : '../../static/img/vip.png'}}"></image>
+            </view>
+            <view class="cb-li-detail">
+              <view class="ab-detail-one">{{item.title}}</view>
+              <view class="ab-detail-two">{{item.desr}}</view>
+              <view class="ab-detail-three">满<text>{{item.min}}</text>人课程开启</view>
+              <view class="ab-detail-four">
+                <view class="ad-four">￥<text class="text1">{{item.price}}</text> / vip会员免费</view>
+                <view class="ad-four-two">{{item.courCount}} / {{item.max}}人</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="span">兼职&公益
+      <image src="../../static/img/activity2.png"></image>
+    </view> -->
+    <!-- 实践 -->
+    <!-- <view class="practice">
+      <view class="scrollAll">
+        <scroll-view scroll-x="true" class="scroll-box">
+          <view class="scroll-box-blank"></view>
+          <block wx:for="{{pracLists}}" wx:for-item="pracList" wx:key="{{pracList.key}}">
+            <view class="{{pracList.isSelect?'scrollClick':'scrollNoClick'}}" bindtap="changePraTab" wx:key="{{pracList.key}}" data-item="{{pracList}}" data-type="{{pracList.type}}">{{pracList.name}}</view>
+          </block>
+          <view class="scroll-box-blank-li"></view>
+        </scroll-view>
+        <view class="shenglue" bindtap="openPractice">
+          <image src="../../static/img/shenglue.png"></image>
+        </view>
+      </view>
+      <view class="courBox">
+        <view class="course-box">
+          <view class="cb-li" 
+          wx:for="{{practiceList}}" 
+          wx:key="" 
+          wx:for-index="idx" 
+          wx:if="{{idx<4}}"
+          bindtap="openCurriculumDetail" 
+          data-sn="{{item.sn}}">
+            <view class="cb-li-img">
+              <image class="cb-li-img-one" src="{{item.courPic}}"></image>
+              <image class="ab-image-two" src="{{item.optiType == 0 ? '' : '../../static/img/vip.png'}}"></image>
+            </view>
+            <view class="cb-li-detail">
+              <view class="ab-detail-one">{{item.title}}</view>
+              <view class="ab-detail-two">{{item.desr}}</view>
+              <view class="ab-detail-three">满<text>{{item.min}}</text>人课程开启</view>
+              <view class="ab-detail-four">
+                <view class="ad-four">￥<text class="text1">{{item.price}}</text> / vip会员免费</view>
+                <view class="ad-four-two">{{item.courCount}} / {{item.max}}人</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view> -->
+  </view>
+</block>

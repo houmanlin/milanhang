@@ -1,0 +1,26 @@
+<view class="nav">
+  <image class="nav-bgc" src="../../../static/img/nav.png"></image>
+  <view class="nav-title">会员福利</view>
+  <view class="nav-back" bindtap="goBack">
+    <image src="../../../static/img/arrow_left.png"></image>
+  </view>
+</view>
+<view class="nav-clone"></view>
+<view class="member">
+  <view class="member-header">
+    <image src='../../../static/img/member.png'></image>
+    <view class="yaoqing">{{yaoqing}}</view>
+  </view>
+  <view class="member-content">
+    <view class="member-content-title">
+      <image class="content-title-img" src="../../../static/img/member-sym.png"></image>
+      <view class="content-title-title">会员专享</view>
+    </view>
+    <view class="content-title-neirong">
+      <image src="http://video.milanhang.com/image/mk_member/1.png" mode="widthFix"></image>
+      <text>1. 定期组织多高校共同活动，拓展你的人脉圈到不同的维度\n2. 提供高端兼职服务\n3. 为会员寻找优良的第三方培训与考证服务，同时帮助会员砍价\n4. 提供公益活动和非营利性活动，帮助别人，成长自己</text>
+    </view>
+    <view class="bottom"></view>
+  </view>
+  <view class="member-bottom" bindtap="openRegisterMember">成为会员</view>
+</view>

@@ -1,0 +1,68 @@
+<view class="nav">
+  <image class="nav-bgc" src="../../../static/img/nav.png"></image>
+  <view class="nav-title">注册会员</view>
+  <view class="nav-back" bindtap="goBack">
+    <image src="../../../static/img/arrow_left.png"></image>
+  </view>
+</view>
+<view class="nav-clone"></view>
+<view class="regmem">
+  <view class="regmem-box">
+    <view class="regmem-box-header"></view>
+    <view class="regmem-box-content">
+      <view class="box-content-one">
+        <image src="../../../static/img/fenlei.png" class="content-one-image"></image>
+        <view class="content-one-name">会员类别</view>
+        <view class="content-one-picker">
+          <picker bindchange="stateChange" value="{{search.stateValue}}" range="{{stateList}}" range-key="valueMeaning">
+            <view class="picker">
+              {{stateList[stateIndex].valueMeaning}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="box-content-one box-content-one-other">
+        <image src="../../../static/img/register_03.png" class="content-one-image"></image>
+        <view class="content-one-name">会员年限</view>
+        <view class="content-one-price">{{yearValue}}</view>
+        <!-- <view class="content-one-price">{{yaoqingvalue}}</view> -->
+        <!-- <view class="content-one-picker">
+          <picker disabled="{{disabled}}" bindchange="yearChange" value="{{search.yearType}}" range="{{memberYearList}}" range-key="valueMeaning">
+            <view class="picker">
+              {{memberYearList[yearIndex].valueMeaning}}
+            </view>
+          </picker>
+        </view> -->
+      </view>
+      <view class="box-content-one box-content-one-other">
+        <image src="../../../static/img/register_06.png" class="content-one-image"></image>
+        <view class="content-one-name">金额<text></text></view>
+        <view class="content-one-price">{{moneyValue}}元</view>
+      </view>
+      <view class="box-content-one box-content-one-three">
+        <image src="../../../static/img/yaoqing.png" class="content-one-image"></image>
+        <view class="content-one-name">邀请码<text></text></view>
+        <!-- <view class="co-input-father">
+          <input 
+          bindinput="yaoqingValue" 
+          type="text" 
+          placeholder="选填" 
+          value="{{yaoqingvalue}}" 
+          disabled="{{search.stateValue === 2 ? false : true}}"
+          class="{{search.stateValue === 2 ? 'content-one-input' : 'content-one-input-other'}}"
+          placeholder-class="{{search.stateValue === 2 ? 'input-placeholder' : 'input-placeholder-other'}}"/>
+        </view> -->
+        <view class="co-input-father">
+          <input 
+          bindinput="yaoqingValue" 
+          type="text" 
+          placeholder="选填" 
+          value="{{yaoqingvalue}}" 
+          class="content-one-input"
+          placeholder-class="input-placeholder"/>
+        </view>
+      </view>
+    </view>
+    <view class="regmem-box-btn" bindtap="sendRegister">确认支付</view>
+  </view>
+</view>

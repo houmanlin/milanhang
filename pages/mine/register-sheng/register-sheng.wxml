@@ -1,0 +1,44 @@
+<view class="nav">
+    <image class="nav-bgc" src="../../../static/img/nav.png"></image>
+    <view class="nav-title">升级会员</view>
+    <view class="nav-back" bindtap="goBack">
+      <image src="../../../static/img/arrow_left.png"></image>
+    </view>
+  </view>
+  <view class="nav-clone"></view>
+  <view class="regmem">
+    <view class="regmem-box">
+      <view class="regmem-box-header"></view>
+      <view class="regmem-box-content">
+        <view class="box-content-one">
+          <image src="../../../static/img/fenlei.png" class="content-one-image"></image>
+          <view class="content-one-name">会员类别</view>
+          <view class="content-one-price">正式会员</view>
+        </view>
+        <view class="box-content-one box-content-one-other">
+          <image src="../../../static/img/register_03.png" class="content-one-image"></image>
+          <view class="content-one-name">会员年限</view>
+          <view class="content-one-price">一年</view>
+        </view>
+        <view class="box-content-one box-content-one-other">
+          <image src="../../../static/img/register_06.png" class="content-one-image"></image>
+          <view class="content-one-name">金额<text></text></view>
+          <view class="content-one-price">188元</view>
+        </view>
+        <view class="box-content-one box-content-one-three">
+          <image src="../../../static/img/yaoqing.png" class="content-one-image"></image>
+          <view class="content-one-name">邀请码<text></text></view>
+          <view class="co-input-father">
+            <input 
+            bindinput="yaoqingValue" 
+            type="text" 
+            placeholder="选填" 
+            value="{{yaoqingvalue}}" 
+            class="content-one-input"
+            placeholder-class="input-placeholder"/>
+          </view>
+        </view>
+      </view>
+      <view class="regmem-box-btn" bindtap="sendRegister">确认支付</view>
+    </view>
+  </view>

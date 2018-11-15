@@ -1,0 +1,40 @@
+<view class="nav">
+  <image class="nav-bgc" src="../../../static/img/nav.png"></image>
+  <view class="nav-title">添加银行卡</view>
+  <view class="nav-back" bindtap="goBack">
+    <image src="../../../static/img/arrow_left.png"></image>
+  </view>
+</view>
+<view class="nav-clone"></view>
+
+<view class="bank">
+  <view class="bank-top">
+    <view class="bank-top-li">
+      <view class="bt-li-left">卡类型</view>
+      <view class="bt-li-right">
+        <picker bindchange="bankChange" value="{{search.bankType}}" range="{{bankList}}" range-key="name">
+          <view class="picker">
+            {{bankList[bankIndex].name}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="bank-top-li">
+      <view class="bt-li-left">持卡人姓名</view>
+      <view class="bt-li-right">
+        <input type="text" bindinput="nameInput" value="{{nameInput}}" placeholder="请填写持卡人姓名"/>
+      </view>
+    </view>
+    <view class="bank-top-li">
+      <view class="bt-li-left">卡号</view>
+      <view class="bt-li-right">
+        <input type="number" bindinput="numInput" value="{{numInput}}" placeholder="请填写卡号"/>
+      </view>
+    </view>
+  </view>
+  <view class="bonus-content-three" bindtap="openTranslateT">账单详情</view>
+  <view class="bank-content">提现操作不可取消，请确认提现银行卡信息无误。</view>
+  <view class="login-footer" bindtap='btnclick'>
+    <view>提 交</view>
+  </view>
+</view>

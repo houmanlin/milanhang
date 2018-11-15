@@ -1,0 +1,45 @@
+<view class="nav">
+  <image class="nav-bgc" src="../../static/img/nav.png"></image>
+  <image class="nav-logo" src="../../static/img/logo.png"></image>
+</view>
+<view class="nav-clone"></view>
+
+<view class="classify">
+  <view class="container">
+    <!--左侧栏-->
+    <view class="nav_left">
+      <block wx:for="{{cateItems}}" wx:key="">
+        <view class="nav_left_items {{curNav == item.sn ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}"
+          data-sn="{{item.sn}}">
+          {{item.typeNameI}}
+        </view>
+      </block>
+    </view>
+    <!--右侧栏-->
+    <view class="nav_right">
+      <!--如果有数据，才遍历项-->
+      <block wx:for="{{cateItems}}" wx:key="">
+        <view wx:if="{{showItems[index]}}" data-show_id="{{index}}">
+          <block wx:for="{{cateItems[index].courseTypeII}}" wx:key="">
+            <view class="nav_right_title">{{item.typeNameII}}</view>
+            <view class="nav_right_content">
+              <view 
+              class="nav_right_items" 
+              wx:for="{{item.courseTypeIII}}" 
+              style="background: {{item.bgcColor}}"
+                wx:key="">
+                <text 
+                bindtap="openCurriculum" 
+                data-lightType="{{item.lightType}}"
+                data-typename="{{item.typeNameIII}}" 
+                data-typedetail="{{item.typeDetailIII}}"
+                >{{item.typeNameIII}}</text>
+              </view>
+              <!-- <view class="nodata_text" wx:if="{{!item.typeNameIII}}">该分类暂无数据哦~</view> -->
+            </view>
+          </block>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
