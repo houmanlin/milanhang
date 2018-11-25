@@ -29,34 +29,23 @@
     </view>
   </view>
   <view class="my-content">
-    <view class="content-first">
-      <view class="content-first-one" bindtap="openWallet">
-        <image src="../../../static/img/my_09.png"></image>
-        <view class="first-one-title">我的课程</view>
-      </view>
-      <view class="content-first-one" bindtap="openBonus">
-        <image src="../../../static/img/my_07.png"></image>
-        <view class="first-one-title">我的奖金</view>
-      </view>
-      <view class="content-first-one" bindtap="openCoupons">
-        <image src="../../../static/img/my_04.png"></image>
-        <view class="first-one-title">我的礼券</view>
-      </view>
-    </view>
-    <view class="content-first">
-      <view class="content-first-one" bindtap="openMember">
-        <image src="../../../static/img/my_16.png"></image>
-        <view class="first-one-title">邀请|会员</view>
-      </view>
-      <view class="content-first-one" bindtap="openAgent">
-        <image src="../../../static/img/my_18.png"></image>
-        <view class="first-one-title">校园合伙人</view>
-      </view>
-      <view class="content-first-one" bindtap="openMobilePhone">
-        <image src="../../../static/img/my_14.png"></image>
-        <view class="first-one-title">联系我们</view>
-      </view>
-    </view>
+      <image src='../../../static/newImg/my_01.png' bindtap='openWallet'></image>
+      <image src='../../../static/newImg/my_02.png' class='nth' bindtap='openBonus'></image>
+      <image src='../../../static/newImg/my_03.png'bindtap='openCoupons'></image>
+      <image src='../../../static/newImg/my_04.png' bindtap='openMember'></image>
+      <image src='../../../static/newImg/my_05.png' class='nth' bindtap='openAgent'></image>
+      <image src='../../../static/newImg/my_07.png' bindtap='jumpWebview'></image>
+      <button open-type="contact" class='callServiceBtn'>
+        <image src='../../../static/newImg/my_08.png'  class='callService' bindtap='openAgent'></image>
+      </button>
+      <image src='../../../static/newImg/my_06.png'  class='nth' bindtap='openMobilePhone'></image>
+      <image src='../../../static/newImg/my_09.png' bindtap='openabout'></image>
   </view>
 </view>
 <loading hidden="{{hidden}}">玩命加载中…</loading>
+<block wx:if="{{erweima}}">
+  <view class="erweima" bindtap='downerweima'>
+    <image src='../../../static/newImg/erweima.jpg' data-src='../../../static/newImg/erweima.jpg'  bindtap='downerweima' data-src='../../../static/newImg/erweima.jpg'></image>
+    
+  </view>
+</block>

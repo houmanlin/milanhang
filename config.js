@@ -92,6 +92,8 @@ var config = {
   getAgentIICount: `${host1}/rest/agent/getAgentIICount`,
   // 获取用户统计信息接口
   getMkCount: `${host1}/rest/MkCount/getMkCount`,
+  // 获取讲师信息
+  getLecturerInfo: `${host1}/rest/lecturer/getLecturerInfo`
 };
 
 module.exports = config;

@@ -19,7 +19,7 @@
     <view class="all-top-btn" bindtap="openTap">课次兑换奖励</view>
   </view> -->
   <view class="all-content">
-    <view class="span">美课活动
+    <view class="span">主题沙龙
       <image src="../../../static/img/huo.png"></image>
     </view>
     <view class="activity">
@@ -73,7 +73,7 @@
       </view>
       <view class="showNo" wx:if="{{!showCour}}">暂无报名的课程呦~</view>
     </view>
-    <view class="span">兼职&公益
+    <!-- <view class="span">兼职&公益
       <image src="../../../static/img/activity2.png"></image>
     </view>
     <view class="activity">
@@ -99,7 +99,7 @@
         </view>
       </view>
        <view class="showNo" wx:if="{{!showPrac}}">暂无报名的实践呦~</view>
-    </view>
+    </view> -->
   </view>
 </view>
 <loading hidden="{{hidden}}">玩命加载中…</loading>

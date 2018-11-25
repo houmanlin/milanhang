@@ -49,7 +49,9 @@ App({
     wx.setStorageSync('logs', logs)
     // 登录
     wx.login({
+      
       success: res => {
+      
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         // 如果本地存在openid
         that.globalData.code = res.code
@@ -71,6 +73,7 @@ App({
             },
             success: function (res) {
               if(res.data.code === 200) {
+        
                 that.globalData.openid = res.data.openid;
                 wx.setStorageSync('openid', res.data.openid)
                 console.log('获取到openid', res.data.openid)
@@ -161,5 +164,6 @@ App({
     getSecCode: require('./config').getSecCode,
     getAgentIICount: require('./config').getAgentIICount,
     getMkCount: require('./config').getMkCount,
+    getLecturerInfo: require('./config').getLecturerInfo,
   }
 })

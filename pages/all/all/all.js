@@ -37,7 +37,7 @@ Page({
     actiCount: 0
   },
   openCurriculumOther: function(e) {
-    console.log(e);
+
     wx.navigateTo({
       url: '../curriculum-other/curriculum-other?sn=' + e.currentTarget.dataset.sn + '&courtype=' + e.currentTarget.dataset.courtype + '&actiontype=' + e.currentTarget.dataset.actitype
     })
@@ -48,6 +48,7 @@ Page({
       hidden: false
     })
     // 获取用户统计信息接口
+ 
     wx.request({
       url: app.globalData.getMkCount,
       data: {
@@ -57,15 +58,18 @@ Page({
         "content-type": "application/x-www-form-urlencoded"
       },
       success: function (res) {
+        console.log(res)
         if(res.data.code === 200){
           if(res.data.list[0]){
             vm.data.recordList = res.data.list[0]
+         
             vm.data.inviteMemOver = res.data.list[0].inviteMemOver
             vm.setData({
               recordList: vm.data.recordList
             })
           }
         }else if(res.data.code == 500){
+ 
           console.log('获取用户统计信息失败')
           vm.setData({
             recordList: vm.data.recordList
@@ -348,6 +352,11 @@ Page({
     // 获取二维码
     wx.navigateTo({
       url: '../Invitation/Invitation'
+    })
+  },
+  lookTeach:function(){
+    wx.navigateTo({
+      url: '../Teacher/Teacher',
     })
   }
 })

@@ -1,0 +1,109 @@
+.TeacherContainer{
+  padding-left:20rpx;
+  padding-right:20rpx;
+}
+.HeaderImg{
+  width: 80%;
+  height: 400rpx;
+  display: block;
+  margin: 30rpx auto;
+  background: red;
+  border-radius: 10px;
+  border: 3px solid #ff7f4d
+}
+.Select{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 30rpx;
+  display: flex
+}
+.Select view{
+  width: 50%;
+  height: 60rpx;
+  border: 3px solid rgba(0, 0, 0, 0);
+  font-weight: bold
+}
+.Selected{
+  color: #ff7f4d;
+  border-bottom:3px solid #ff7f4d!important;
+}
+.TeacherImg{
+  width: 100%;
+  margin-top: 15rpx
+}
+
+
+.activity-box{
+  width: 100%;
+  display: flex;
+  margin-bottom: 10rpx;
+  border-bottom: 1px solid rgba(225, 225, 225, 1)
+}
+.ab-image{
+  width:46%;
+  height:220rpx;
+  margin-right:30rpx;
+  overflow: hidden;
+  border-radius: 10rpx;
+  position: relative;
+}
+.ab-image .ab-image-one{
+  width: 100%;
+  height: 100%;
+}
+.ab-image-two{
+  width:70rpx;
+  height:40rpx;
+  position:absolute;
+  left:5%;
+  top:5%;
+  z-index:999;
+}
+.ab-detail{
+  width: 50%;
+  padding-top: 25rpx;
+  box-sizing: border-box;
+}
+.ab-detail-one{
+  color: #0a0a0a;
+  font-size: 28rpx;
+  margin-bottom: 10rpx;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+.ab-detail-two{
+  color: #797979;
+  font-size: 22rpx;
+  margin-bottom: 10rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+.ab-detail-three{
+  color: #797979;
+  font-size: 22rpx;
+  margin-bottom: 10rpx;
+}
+.ab-detail-three>text{
+  font-size: 24rpx;
+}
+.ab-detail-four{
+  font-size: 18rpx;
+  color: #cf595f;
+  position: relative;
+  width: 95%;
+}
+.ad-four>.text1{
+  font-size: 30rpx;
+}
+.ad-four-two{
+  position: absolute;
+  right: 0rpx;
+  bottom: 0rpx;
+}

@@ -64,6 +64,7 @@ Page({
     })
   },
   onLoad: function (options) {
+
     var vm = this
     wx.setStorage({
       key: 'memId',
@@ -247,13 +248,11 @@ Page({
         "content-type": "application/x-www-form-urlencoded"
       },
       success: function(res){
-        
-         console.log( res.data.list)
         if(res.data.code === 200){
-          vm.data.imgUrls = res.data.list
-          vm.setData({
-            imgUrls: vm.data.imgUrls
-          })
+            vm.data.imgUrls = res.data.list
+            vm.setData({
+              imgUrls: vm.data.imgUrls
+            })
         }
       },
       fail: function() {

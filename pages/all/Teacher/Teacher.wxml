@@ -1,0 +1,39 @@
+<view class="nav">
+  <image class="nav-bgc" src="../../../static/img/nav.png"></image>
+  <view class="nav-title">{{title}}</view>
+  <view class="nav-back" bindtap="goBack">
+    <image src="../../../static/img/arrow_left.png"></image>
+  </view>
+</view>
+<view class="nav-clone"></view>
+
+<!-- 头像 -->
+<image class='HeaderImg' src='{{TeacherImg}}'></image>
+<view class='TeacherContainer'>
+  <view class='Select'>
+    <view class="{{TeacherDatil == '1'? 'Selected' : ''}}" bindtap='SelectFun' data-index='1'>老师简介</view>
+    <view class="{{TeacherDatil == '2'? 'Selected' : ''}}" bindtap='SelectFun' data-index='2'>老师课程</view>
+  </view>
+  <view wx:if="{{TeacherDatil == '1'}}">
+    <image class='TeacherImg' wx:for="{{TeacherDatiles}}" src='{{item.lecturerPath}}' mode='widthFix'></image>
+  </view>
+  <view wx:if="{{TeacherDatil == '2'}}"  style="margin-top:20rpx">
+    <view class="actBox">
+        <view class="activity-box" >
+          <view class="ab-image">
+            <image class="ab-image-one" src=""></image>
+            <image class="ab-image-two" src="{{item.optiType == 0 ? '' : '../../static/img/vip.png'}}"></image>
+          </view>
+          <view class="ab-detail">
+            <view class="ab-detail-one"></view>
+            <view class="ab-detail-two"></view>
+            <view class="ab-detail-three">满<text></text>人活动开启</view>
+            <view class="ab-detail-four">
+              <view class="ad-four">￥<text class="text1"></text> / 会员优惠券抵扣</view>
+              <view class="ad-four-two">/人</view>
+            </view>
+          </view>
+        </view>
+      </view>
+  </view>
+</view>

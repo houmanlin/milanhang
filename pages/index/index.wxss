@@ -369,7 +369,7 @@ swiper-item>image {
   margin-bottom: 10rpx;
 }
 .ab-image{
-  width:50%;
+  width:46%;
   height:220rpx;
   margin-right:30rpx;
   overflow: hidden;

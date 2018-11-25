@@ -7,12 +7,21 @@
 </view>
 <view class="nav-clone"></view>
 <view class="recruit" wx:for="{{curriculumList}}" wx:key="">
+  <!-- 老师信息 -->
+  <view class='TeacherDatilBg' hidden='{{Detail}}' bindtap='closeTeacherDatil'>
+    <view class='TeacherDatil'>
+      <image src='{{TeacherImg}}'></image>
+      <view class='name text-center' style='padding-top:30rpx'>{{name}}</view>
+      <view class='scholl text-center' style='padding-top:30rpx'>{{scholl}}</view>
+    </view>
+  </view>
+  <!-- 结束 -->
   <view class="recruit-header">
     <view class="recruit-header-box">
       <view class="header-box-image">
         <!-- <image src="{{titleImg}}"></image> -->
         <!-- <image src="../../../static/img/image_03.png"></image> -->
-        <image src="{{activetype == 1 ? item.courPic:item.actiPic}}"></image>
+        <image src="{{actionType == '1' ? item.actiPic : item.courPic}}"></image>
         <view class="header-box-title"></view>
         <view class="header-box-real">{{item.title}}</view>
       </view>
@@ -20,29 +29,44 @@
         <view class="box-content-top">{{item.desr}}</view>
         <view class="box-content-bottom">
           <view class="content-bottom-left">报名时间截止至{{item.endTime}}</view>
-          <view class="content-bottom-right">{{activetype == 1 ? item.courCount:item.actiCount}}/<text>{{item.max}}人</text></view>
+          <view class="content-bottom-right">{{actionType == '1' ? item.acti_count : item.courCount}}/
+            <text>{{item.max}}人</text>
+          </view>
         </view>
       </view>
     </view>
   </view>
+  <block wx:if="{{actionType != '1'}}">
   <view class="border"></view>
-
+  <view bindtap='LookTeacher' data-courId='{{courId}}'>
+    <view class='bindTeacher'>
+      <image src='{{TeacherImg}}'></image>
+      <view class='text_view'>
+        <view>{{name}}</view>
+        <view>{{scholl}}</view>
+      </view>
+      <image src='../../../static/img/arrow_right.png' class='gengduo'></image>
+    </view>
+  </view>
+  </block>
+  <view class="border"></view>
   <view class="recruit-bottom">
     <view class="recruit-bottom-top">
       <view class="bottom-top-box">
         <view class="top-box-image">
           <!-- <video custom-cache="{{false}}" id="bigVideo" wx:if="{{!showVidImg}}" bindended="openVideo" show-center-play-btn="{{videoFalse}}" src="http://pg47zs8p2.bkt.clouddn.com/video/type/001.mp4" controls="true" objectFit="contain"></video> -->
-          <video custom-cache="{{false}}" id="bigVideo" wx:if="{{!showVidImg}}" bindended="openVideo" show-center-play-btn="{{videoFalse}}" src="{{activetype==1?item.courVideo:actiVideo}}" controls="true" objectFit="contain"></video>
+          <video custom-cache="{{false}}" id="bigVideo" wx:if="{{!showVidImg}}" bindended="openVideo" show-center-play-btn="{{videoFalse}}" src="{{actionType=='1'? item.actiVideo:item.courVideo}}" controls="true" objectFit="contain"></video>
           <!-- <image class="video-cover" wx:if="{{showVidImg}}" src="../../../static/img/1.jpg"></image> -->
-          <image class="video-cover" wx:if="{{showVidImg}}" src="{{activetype == 1?item.courVideoPic:item.actiVideoPic}}"></image>
+          <image class="video-cover" wx:if="{{showVidImg}}" src="{{actionType == '1'?item.actiVideoPic :item.courVideoPic}}"></image>
           <image class="video-play-btn" wx:if="{{showVidImg}}" bindtap="videoPlay" src="../../../static/img/play.png"></image>
         </view>
       </view>
       <!-- <view class="top-box-title">{{item.courAbs}}</view> -->
       <view class="top-box-title">课程的简介</view>
       <view class="allImage">
-        <image wx:for="{{activetype==1?item.coursePaths:item.actiPaths}}" wx:key="" src="{{activetype==1?item.coursePath:item.actiPath}}" mode="widthFix"></image>
+        <image wx:for="{{actionType=='1'?item.actiPaths:item.coursePaths}}" wx:key="" src="{{actionType=='1'?item.actiPath : item.coursePath}}" mode="widthFix"></image>
       </view>
+
       <view class="recruit-content">
         <view class="recruit-content-top">
           <view class="content-top-title">已报名</view>
@@ -62,7 +86,9 @@
       <view class="border"></view>
       <view class="bottom-bottom-detail">
         <view class="bottom-detail-left">
-          <view class="afterPrice">试听：<text>￥{{item.price}}</text></view>
+          <view class="afterPrice">
+            <text>￥{{item.price}}</text>
+          </view>
           <view class="beforePrice">（vip会员免费）</view>
         </view>
         <view class="bottom-detail-right" bindtap="openLogin" data-price="{{item.price}}" data-curriculumid="{{curriculumid}}" data-curriculumname="{{curriculumname}}">
@@ -72,4 +98,5 @@
     </view>
   </view>
 </view>
-<loading hidden="{{hidden}}">玩命加载中…</loading>
+
+<loading hidden="{{hidden}}">玩命加载中…{{hidden}}</loading>

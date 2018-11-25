@@ -9,7 +9,7 @@
 
 <view class="search">
   <view class="search-top">
-    <input placeholder="美课课程" auto-focus class="search-top-input" placeholder-class="input-placeholder" bindinput="searchValue"/>
+    <input placeholder="搜索课程" auto-focus class="search-top-input" placeholder-class="input-placeholder" bindinput="searchValue"/>
     <view class="search-top-btn" bindtap="sendSearch">搜索</view>
   </view>
   <view class="actBox">

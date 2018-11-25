@@ -41,7 +41,7 @@
   vertical-align: middle
 }
 .position{
-  width: 37rpx;
+  width: 32rpx;
   height: 35rpx;
   vertical-align: middle;
   padding-top: 20rpx;
@@ -55,28 +55,32 @@
 }
 .search-input{
   height: 100%;
-  padding-left: 10rpx
+  padding-left: 10rpx;
+  position:absolute;
+  left:60rpx;
+  top: 0
+
 }
 .placeholder-class{
   font-size: 30rpx;
   color: rgb(226, 226, 226)
 }
 .searchInput{
-  width: 50%;
+  position:relative;
+
+  width: 70%;
   display: flex;
 }
 
 /* Banner轮播图 */
-swiper-item{
-  border-radius:10px;
-  overflow: hidden;
-  height: 353rpx;
+swiper-item {
+  position: relative;
+  text-shadow: 0 2rpx #fff, 2rpx 0 #fff, -2rpx 0 #fff, 0 -2rpx #fff;
 }
 
-.swiperImg{
+swiper-item>image {
   width: 100%;
   height: 100%;
-  background: red
 }
 .gridLayout{
   width: 100%;
@@ -97,4 +101,5 @@ swiper-item{
   height: 100%;
   display: block
 }
-.text-view{width: 100%;height: 335rpx;background: red;margin-bottom: 25rpx;border-radius: 10px}
+.text-view{width: 100%;height: 335rpx;margin-bottom: 25rpx;border-radius: 10px}
+.text-view image{width: 100%;height: 100%}

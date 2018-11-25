@@ -4,7 +4,7 @@
 </view>
 <view class="nav-clone"></view>
 <!--index.wxml-->
-<view wx:if="{{hasUserInfo === 2}}">
+<view wx:if="{{hasUserInfo == 2}}">
   <view class="content">
     <view class="content-header">
       <image src="../../static/img/logo_other.png"></image>
@@ -22,38 +22,41 @@
     <button class="content-footer" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">授权登录</button>
   </view>
 </view>
-<view if="{{hasUserInfo === 1}}">
-  <button open-type='contact' style='position:fixed;bottom:30px;width:100%' bindtap='callService'>呼叫客服</button>
+
+<!-- 授权后 -->
+<block wx:if="{{hasUserInfo == 1}}">
   <view class='next-container'>
     <view class='search margin-t-25'>
-      <view class='selectClass help padd-l-20 padd-r-20'>
+      <view class='selectClass help padd-l-20 padd-r-20' bindtap='test'>
         帮你选课
         <image class='imgdown' src='../../static/newImg/home_down_icon.png'></image>
       </view>
       <view class='shuxian'></view>
       <view class='searchInput'>
         <image class='position' src='../../static/newImg/home_Location_icon.png'></image>
-        <input type='search' class='search-input' placeholder='尚未选择课程' placeholder-class='placeholder-class' bindtap='jumpSearch'></input>
+        <input type='search' class='search-input' placeholder='搜索课程' placeholder-class='placeholder-class' bindtap='jumpSearch'></input>
       </view>
      
     </view>
-    <swiper class='margin-t-25' indicator-dots="true" autoplay="true" interval="5000" duration="1000">
-      <block wx:for="{{imgUrls}}" wx:key="item">
+    <swiper class='margin-t-25' indicator-dots="false" autoplay="true" interval="5000" duration="1000" circular='true'>
+      <block wx:if="{{item.sn != 5}}" wx:for="{{imgUrls}}" wx:key="item">
         <swiper-item>
-          <image class='swiperImg'  style='backgroud:{{item}}'  class="slide-image"/>
+          <image class='swiperImg' src='{{item.picPath}}'  class="slide-image"/>
         </swiper-item>
       </block>
     </swiper>
   </view>
   <view class='gridLayout'>
-    <view class='gridLayout-item' wx:for="{{gridLayout}}" wx:key="item">
-        <image src='{{item}}'></image>
+    <view class='gridLayout-item' wx:for="{{gridLayout}}" wx:key="item" data-sn="{{item.sn}}" data-indexpage='1' bindtap="{{item.sn != undefind ? 'goLayout' : '' }}">
+        <image  src='{{item.url}}'></image>
     </view>
   </view>
   <view class='next-container'>
-    <view class='margin-t-25 text-view'></view>
-    <view class='margin-t-25 text-view'></view>
-    <view class='margin-t-25 text-view'></view>
-    <view class='margin-t-25 text-view'></view>
+    <view class='margin-t-25 text-view' wx:for="{{gridLayout2}}" wx:key="item"  data-sn="{{item.sn}}" data-indexpage='1' bindtap='goLayout'>
+        <image src='{{item.url}}'></image>
+    </view>
+     <!-- <view class='margin-t-25 text-view'  data-sn="036" data-indexpage='1' bindtap='goLayout'>
+        <image src='{{src2}}'></image>
+    </view> -->
   </view>
-</view>
+</block>

@@ -1,0 +1,27 @@
+<view class="nav">
+  <image class="nav-bgc" src="../../../static/img/nav.png"></image>
+  <view class="nav-title">关于美课</view>
+  <view class="nav-back" bindtap="goBack">
+    <image src="../../../static/img/arrow_left.png"></image>
+  </view>
+</view>
+<view class="nav-clone"></view>
+<view class='aboutmeike'>
+  <view class='text_title'>美课优选是一个什么样的平台</view>
+  <view class='aboutcontext'>
+    美课优选,一个专注大学生成长的平台。从人脉拓展到面试辅导、从技能培养到就业推荐,平台为大学生搭建一套全面的能力提升体系,辅助大学生就业知名企业。
+  </view>
+  <view class='text_title text-left'>美课优选的愿景——帮助每一个大学生成长</view> 
+  <view class='about_container'>
+    <view wx:for="{{about}}" wx:key="item" class='container_item'>
+      <image  class='icon' src='{{item.icon}}'></image>
+      <view class='text1 text'>{{item.text1}}</view>
+      <view class='text2 text'>{{item.text2}}</view>
+    </view> 
+  </view>
+  <view class='text_title'>美课位置</view>
+  <map id='SOHO' longitude="123.427970" latitude= "41.761360" markers="{{markers}}"></map>
+  <view class='PhoneNumber'>地址:辽宁省沈阳市和平区三好街87号10楼1003</view>
+  <view class='PhoneNumber' bindtap='CallPhonNum'>美课热线:024-31507533</view>
+
+</view>

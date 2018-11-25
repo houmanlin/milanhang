@@ -7,6 +7,15 @@
 </view>
 <view class="nav-clone"></view>
 <view class="recruit" wx:for="{{curriculumList}}" wx:key="">
+  <!-- 老师信息 -->
+  <view class='TeacherDatilBg' hidden='{{Detail}}' bindtap='closeTeacherDatil'>
+    <view class='TeacherDatil'>
+      <image src='{{TeacherImg}}'></image>
+      <view class='name text-center' style='padding-top:30rpx'>{{name}}</view>
+      <view class='scholl text-center' style='padding-top:30rpx'>{{scholl}}</view>
+    </view>
+  </view>
+  <!-- 结束 -->
   <view class="recruit-header">
     <view class="recruit-header-box">
       <view class="header-box-image">
@@ -18,58 +27,89 @@
       </view>
       <view class="header-box-content">
         <view class="box-content-top">{{item.desr}}</view>
-        <view class="box-content-bottom">
-          <view class="content-bottom-left">报名时间截止至{{item.endTime}}</view>
-          <view class="content-bottom-right">{{item.courCount}}/<text>{{item.max}}人</text></view>
-        </view>
+        <block wx:if="{{indexpage != '1'}}">
+          <view class="box-content-bottom">
+            <view class="content-bottom-left">报名时间截止至{{item.endTime}}</view>
+            <view class="content-bottom-right">{{item.courCount}}/
+              <text>{{item.max}}人</text>
+            </view>
+          </view>
+        </block>
       </view>
     </view>
   </view>
+<block wx:if="{{actionType != '1'}}">
+  <view class="border"></view>
+  <view bindtap='LookTeacher'>
+    <view class='bindTeacher'>
+      <image src='{{TeacherImg}}'></image>
+      <view class='text_view'>
+        <view>{{name}}</view>
+        <view>{{scholl}}</view>
+      </view>
+      <image src='../../../static/img/arrow_right.png' class='gengduo'></image>
+    </view>
+  </view>
+  </block>
   <view class="border"></view>
 
   <view class="recruit-bottom">
     <view class="recruit-bottom-top">
-      <view class="bottom-top-box">
-        <view class="top-box-image">
-          <!-- <video custom-cache="{{false}}" id="bigVideo" wx:if="{{!showVidImg}}" bindended="openVideo" show-center-play-btn="{{videoFalse}}" src="http://pg47zs8p2.bkt.clouddn.com/video/type/001.mp4" controls="true" objectFit="contain"></video> -->
-          <video custom-cache="{{false}}" id="bigVideo" wx:if="{{!showVidImg}}" bindended="openVideo" show-center-play-btn="{{videoFalse}}" src="{{item.courVideo}}" controls="true" objectFit="contain"></video>
-          <!-- <image class="video-cover" wx:if="{{showVidImg}}" src="../../../static/img/1.jpg"></image> -->
-          <image class="video-cover" wx:if="{{showVidImg}}" src="{{item.courVideoPic}}"></image>
-          <image class="video-play-btn" wx:if="{{showVidImg}}" bindtap="videoPlay" src="../../../static/img/play.png"></image>
+      <view wx:if="{{indexpage != '1'}}">
+        <view class="bottom-top-box">
+          <view class="top-box-image">
+            <!-- <video custom-cache="{{false}}" id="bigVideo" wx:if="{{!showVidImg}}" bindended="openVideo" show-center-play-btn="{{videoFalse}}" src="http://pg47zs8p2.bkt.clouddn.com/video/type/001.mp4" controls="true" objectFit="contain"></video> -->
+            <video custom-cache="{{false}}" id="bigVideo" wx:if="{{!showVidImg}}" bindended="openVideo" show-center-play-btn="{{videoFalse}}" src="{{item.courVideo}}" controls="true" objectFit="contain"></video>
+            <!-- <image class="video-cover" wx:if="{{showVidImg}}" src="../../../static/img/1.jpg"></image> -->
+            <image class="video-cover" wx:if="{{showVidImg}}" src="{{item.courVideoPic}}"></image>
+            <image class="video-play-btn" wx:if="{{showVidImg}}" bindtap="videoPlay" src="../../../static/img/play.png"></image>
+          </view>
         </view>
       </view>
       <!-- <view class="top-box-title">{{item.courAbs}}</view> -->
-      <view class="top-box-title">课程的简介</view>
-      <view class="allImage">
+      <view class="top-box-title">详情介绍</view>
+      <view class="allImage" style="margin-bottom:{{indexpage != '1' ? '10rpx' :'80rpx' }}">
         <image wx:for="{{item.coursePaths}}" wx:key="" src="{{item.coursePath}}" mode="widthFix"></image>
       </view>
-      <view class="recruit-content">
-        <view class="recruit-content-top">
-          <view class="content-top-title">已报名</view>
-          <view class="top-small-border"></view>
-        </view>
-        <view class="recruit-content-bottom">
-          <view class="scroll">
-            <view class="content-bottom-li" wx:for="{{item.max}}" wx:key="item.max">
-              <image src="{{imgList[index]}}" wx:if="{{imgList[index]}}" wx:key="imgList"></image>
+   
+      <view wx:if="{{indexpage != '1'}}">
+        <view class="recruit-content">
+          <view class="recruit-content-top">
+
+            <view class="content-top-title">已报名</view>
+            <view class="top-small-border"></view>
+          </view>
+          <view class="recruit-content-bottom">
+            <view class="scroll">
+              <view class="content-bottom-li" wx:for="{{item.max}}" wx:key="item.max">
+                <image src="{{imgList[index]}}" wx:if="{{imgList[index]}}" wx:key="imgList"></image>
+              </view>
             </view>
           </view>
         </view>
       </view>
     </view>
-    <view class="recruit-bottom-bottom-clone"></view>
-    <view class="recruit-bottom-bottom">
-      <view class="border"></view>
-      <view class="bottom-bottom-detail">
-        <view class="bottom-detail-left">
-          <view class="afterPrice">试听：<text>￥{{item.price}}</text></view>
-          <view class="beforePrice">（vip会员免费）</view>
-        </view>
-        <view class="bottom-detail-right" bindtap="openLogin" data-price="{{item.price}}" data-curriculumid="{{curriculumid}}" data-curriculumname="{{curriculumname}}">
-          <image src="{{signImg}}"></image>
+    <view wx:if="{{indexpage != '1'}}">
+      <view class="recruit-bottom-bottom-clone"></view>
+
+      <view class="recruit-bottom-bottom">
+        <view class="border"></view>
+        <view class="bottom-bottom-detail">
+          <view class="bottom-detail-left">
+            <view class="afterPrice">
+              <text>￥{{item.price}}</text>
+            </view>
+            <view class="beforePrice">（vip会员免费）</view>
+          </view>
+          <view class="bottom-detail-right" bindtap="openLogin" data-price="{{item.price}}" data-curriculumid="{{curriculumid}}" data-curriculumname="{{curriculumname}}">
+            <image src="{{signImg}}"></image>
+          </view>
         </view>
       </view>
     </view>
   </view>
 </view>
+<button open-type='contact' class='callservice content-footer' wx:if="{{indexpage==1}}">
+  <image style='width:56rpx;height:56rpx;vertical-align:middle' src='../../../static/newImg/wx.png'></image> 在线咨询
+</button>
 <loading hidden="{{hidden}}">玩命加载中…</loading>

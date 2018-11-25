@@ -1,32 +1,9 @@
-<!--index.wxml-->
-<view wx:if="{{hasUserInfo === 2}}">
-  <view class="nav">
-    <image class="nav-bgc" src="../../static/img/nav.png"></image>
-  </view>
-  <view class="nav-clone"></view>
-  <view class="content">
-    <view class="content-header">
-      <image src="../../static/img/logo_other.png"></image>
-    </view>
-    <view class="content-detail">
-      <view class="content-detail-li">
-        <image src='../../static/img/orange.png'></image>
-        <view>申请获取以下权限</view>
-      </view>
-      <view class="content-detail-li content-detail-li-other">
-        <image src='../../static/img/gray.png'></image>
-        <view>获得你的公开信息（昵称，头像等）</view>
-      </view>
-    </view>
-    <button class="content-footer" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">授权登录</button>
-  </view>
-</view>
 
 <!-- 授权后 -->
-<block wx:if="{{hasUserInfo === 1}}">
+
   <view class="nav">
     <image class="nav-bgc" src="../../static/img/nav.png"></image>
-    <image class="nav-logo" src="../../static/img/logo.png"></image>
+    <view class="nav-title">美课课程</view>
   </view>
   <view class="nav-clone"></view>
 
@@ -43,7 +20,7 @@
     </view> -->
     <view class="activity_top">
       <swiper autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
-        <block wx:for="{{imgUrls}}" wx:key="imgUrls">
+        <block wx:if="{{item.sn==5}}" wx:for="{{imgUrls}}" wx:key="imgUrls">
           <swiper-item>
             <image src="{{item.picPath}}" class="slide-image" mode="scaleToFill"/>
           </swiper-item>
@@ -215,4 +192,4 @@
       </view>
     </view> -->
   </view>
-</block>
+

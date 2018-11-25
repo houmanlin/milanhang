@@ -65,9 +65,15 @@ page{
   color: #c3c3c3;
 }
 .search-top-btn{
-  font-size: 34rpx;
+  font-size: 28rpx;
   width: 15%;
   text-align: center;
+  border: 1px solid rgb(226, 226, 226);
+  vertical-align: text-bottom;
+  border-radius: 10px;
+  line-height: 50rpx;
+  background: #ff7f0d;
+  color: #fff
 }
 .search-content{
   padding: 20rpx 0rpx 20rpx 30rpx;

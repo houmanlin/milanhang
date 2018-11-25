@@ -1,5 +1,6 @@
 {
   "pages":[
+  
     "pages/next/next",
     "pages/index/index",
     "pages/mine/coupons/coupons",
@@ -8,7 +9,7 @@
     "pages/mine/translate/translate",
     "pages/mine/translateT/translateT",
     "pages/mine/member/member",
-    "pages/mine/register-member/register-member",
+    "pages/mine/register-member/register-member", 
     "pages/mine/register-again/register-again",
     "pages/mine/register-sheng/register-sheng",
     "pages/mine/agent/agent",
@@ -31,9 +32,10 @@
     "pages/curriculum/price-null/price-null",
     "pages/classify/classify",
     "pages/all/all/all",
+    "pages/all/Teacher/Teacher",
     "pages/all/Invitation/Invitation",
-    "pages/all/curriculum-other/curriculum-other"
- 
+    "pages/all/curriculum-other/curriculum-other",
+    "pages/mine/webview/webview"
   ],
   "window":{
     "backgroundTextStyle": "light",

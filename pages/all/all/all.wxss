@@ -35,8 +35,8 @@
   font-size: 34rpx;
 }
 .all-top-image image{
-  width: 60rpx;
-  height: 60rpx;
+  width: 44rpx;
+  height: 58rpx;
   position: absolute;
   left: -1%;
   top: 50%;
@@ -189,13 +189,14 @@
 .ab-detail{
   width: 55%;
   padding-top: 5rpx;
+
   box-sizing: border-box;
   position: relative;
 }
 .ab-detail-one{
   color: #0a0a0a;
   font-size: 32rpx;
-  margin-bottom: 10rpx;
+  margin-bottom: 15rpx;
   /* font-weight: bold; */
   white-space: nowrap;
   overflow: hidden;
@@ -205,7 +206,7 @@
 .ab-detail-two{
   color: #797979;
   font-size: 26rpx;
-  margin-bottom: 45rpx;
+  margin-bottom:15rpx;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -214,11 +215,22 @@
 .ab-detail-three{
   color: #797979;
   font-size: 22rpx;
-  margin-bottom: 5rpx;
+  
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
+}
+.ab-detail-four{
+  font-size: 18rpx;
+  color: #cf595f;
+  position: relative;
+  width: 95%;
+}
+.ab-detail-five{
+  font-size: 22rpx;
+  color: #cf595f;
+  
 }
 .ab-detail-three>text{
   font-size: 32rpx;
@@ -249,16 +261,7 @@
   bottom: 0rpx;
   width: 100%;
 }
-.ab-detail-four{
-  font-size: 18rpx;
-  color: #cf595f;
-  position: relative;
-  width: 95%;
-}
-.ab-detail-five{
-  font-size: 22rpx;
-  color: #cf595f;
-}
+
 .ad-four>.text1{
   font-size: 30rpx;
 }
@@ -271,6 +274,7 @@
   width: 100%;
   font-size: 36rpx;
   color: #797979;
+  position: relative;
   /* padding-left: 20rpx;
   box-sizing: border-box; */
 }
@@ -282,6 +286,12 @@
   width:50rpx;
   height:50rpx;
 }
+.lookTeach{
+  position: absolute;
+  right: 10rpx;
+  top: 9rpx;
+   font-size:30rpx
+}
 .showNo{
   text-align: center;
   color: #797979;
@@ -289,4 +299,61 @@
   width: 100%;
   margin-top: 50rpx;
   margin-bottom: 50rpx;
+}
+/* 我的成长履历 */
+.margin-bottom{
+  margin-bottom: 0rpx!important
+}
+.all-top-items{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+.items{
+  width: 51%;
+  height: auto;
+  margin-top: 20rpx
+}
+.items .item{
+  margin-bottom:37rpx;
+  border-left: 3px solid #fe8f10;
+  text-indent: 10rpx;
+  display: flex;
+  justify-content: space-between
+}
+.ticket{
+  width: 45%;
+  height: auto;
+  border: 1px solid rgb(226, 226, 226);
+  text-align: center;
+  padding-bottom: 10rpx;
+  padding-top: 10rpx;
+  border-radius: 8px;
+  color: #b68800
+}
+.InviteFriend{
+  width: 70%;
+  margin: 20rpx auto 10rpx;
+  font-size:30rpx;
+  color: #b68800;
+  background: #fbc501
+}
+.ticket image{
+  width: 80rpx;
+  height: 80rpx;
+  margin: 10rpx auto 0;
+  display: block
+}
+.ticketNum{
+  font-size: 32rpx;
+  margin-top: 10rpx
+}
+.items2{
+  display: flex;
+  justify-content: space-around;
+  padding-left: 10rpx
+}
+.ticket2{
+  background: #fbc501
 }

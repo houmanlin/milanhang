@@ -11,6 +11,7 @@ Page({
     endTime: '',
     formalTime: '',
     state: '',
+    erweima:false
   },
   onLoad: function() {
     var vm = this
@@ -48,7 +49,8 @@ Page({
   onShow: function() {
     var vm = this
     vm.setData({
-      hidden: false
+      hidden: false,
+      erweima:false
     })
     // 验证用户是否是会员
     wx.request({
@@ -164,6 +166,23 @@ Page({
   openRegisterSheng: function() {
     wx.navigateTo({
       url: '../register-sheng/register-sheng'
+    })
+  },
+  openabout:function(){
+   wx.navigateTo({
+     url: '../webview/webview',
+   })
+  },
+  jumpWebview:function(){
+    const that = this
+    that.setData({
+      erweima: true
+    })
+  },
+  downerweima:function(e){
+    const that = this;
+    that.setData({
+      erweima:false
     })
   }
 })

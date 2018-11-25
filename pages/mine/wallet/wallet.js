@@ -4,7 +4,7 @@ Page({
   data:{
     activityList: [],
     curriculumList: [],
-    practiceList: [],
+    //practiceList: [],
     hidden: true,
     actLength: 0,
     courLength: 0,
@@ -95,35 +95,35 @@ Page({
       }
     })
     // 报名实践
-    wx.request({
-      url: app.globalData.findOwerCourse,
-      data: {
-        openid: app.globalData.openid,
-        type: 2
-      },
-      header: {
-        "content-type": "application/x-www-form-urlencoded"
-      },
-      success: function (res) {
-        if(res.data.rows) {
-          vm.data.practiceList = res.data.rows
-          vm.data.pracLength = vm.data.practiceList.length
-          vm.setData({
-            hidden: true,
-            practiceList: vm.data.practiceList,
-            pracLength: vm.data.pracLength,
-            showPrac: true
-          })
-        }else{
-          vm.setData({
-            hidden: true,
-            showPrac: false
-          })
-        }
-      },
-      fail: function (res) {
-      }
-    })
+    // wx.request({
+    //   url: app.globalData.findOwerCourse,
+    //   data: {
+    //     openid: app.globalData.openid,
+    //     type: 2
+    //   },
+    //   header: {
+    //     "content-type": "application/x-www-form-urlencoded"
+    //   },
+    //   success: function (res) {
+    //     if(res.data.rows) {
+    //       vm.data.practiceList = res.data.rows
+    //       vm.data.pracLength = vm.data.practiceList.length
+    //       vm.setData({
+    //         hidden: true,
+    //         practiceList: vm.data.practiceList,
+    //         pracLength: vm.data.pracLength,
+    //         showPrac: true
+    //       })
+    //     }else{
+    //       vm.setData({
+    //         hidden: true,
+    //         showPrac: false
+    //       })
+    //     }
+    //   },
+    //   fail: function (res) {
+    //   }
+    // })
   },
   openTap: function() {
     wx.showToast({

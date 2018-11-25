@@ -19,6 +19,11 @@ Page({
     showVidImg: true,
     state: '',
     optiType: 0,
+    indexpage:0,
+    TeacherImg: "../../../static/img/men.png",
+    name: "",
+    scholl: "",
+    Detail: true
   },
   goBack: function() {
     wx.navigateBack({
@@ -30,7 +35,18 @@ Page({
     vm.setData({
       hidden: false
     })
+    vm.data.indexpage = options.indexpage
     vm.data.mySn = options.sn
+    if (vm.data.indexpage!=undefined){
+      vm.data.mySn = "0" + options.sn
+    }
+ 
+    
+    console.log("index=" + vm.data.indexpage);
+    vm.setData({
+      indexpage:vm.data.indexpage
+    })
+    
     wx.request({
       url: app.globalData.oneCource,
       data: {
@@ -41,7 +57,13 @@ Page({
         "content-type": "application/x-www-form-urlencoded"
       },
       success: function (res) {
+      
         console.log(res)
+        vm.getTeacherDatil(res.data.rows[0].lecturerId)
+        vm.data.courId = res.data.rows[0].lecturerId
+        vm.setData({
+          courId: res.data.rows[0].lecturerId
+        })
         vm.data.curriculumList = res.data.rows
         // 判断如果活动结束则不可再点击报名
         if(vm.data.curriculumList[0].state === 1) {
@@ -106,9 +128,11 @@ Page({
         "content-type": "application/x-www-form-urlencoded"
       },
       success: function (res) {
+   
         console.log(res)
         vm.data.curriculumList = res.data.rows
         vm.data.optiType = vm.data.curriculumList[0].optiType
+
         // 判断如果活动结束则不可再点击报名
         if(vm.data.curriculumList[0].state === 1) {
           vm.setData({
@@ -333,4 +357,36 @@ Page({
       showVidImg: false
     })
   },
+  LookTeacher: function (e) {
+    wx.navigateTo({
+      url: '../../all/Teacher/Teacher?courid=' + e.currentTarget.dataset.courid,
+    })
+  },
+  getTeacherDatil: function (data) {
+    const vm = this
+    wx.request({
+      url: app.globalData.getLecturerInfo,
+      data: {
+        lecturerId: data
+      },
+      method: 'POST',
+      header: {
+        "content-type": "application/x-www-form-urlencoded"
+      },
+      success: function (res) {
+
+
+        vm.data.TeacherImg = res.data.rows[0].lecturerPaths[0].lecturerPath;
+        vm.data.name = res.data.rows[0].lecturerName;
+        vm.data.scholl = res.data.rows[0].lecturerIntroduce
+
+        vm.setData({
+          TeacherImg: vm.data.TeacherImg,
+          name: vm.data.name,
+          scholl: vm.data.scholl,
+
+        })
+      }
+    })
+  }
 })

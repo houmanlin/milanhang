@@ -12,13 +12,13 @@ page{
 }
 .my-header-box{
   position:absolute;
-  left:53rpx;
+  left:33rpx;
   top:192rpx;
-  border:2rpx solid #fc9050;
+  border:2rpx solid rgb(226, 226, 226);
   border-radius:10rpx;
   padding:12rpx 20rpx;
   box-sizing: border-box;
-  width: 86%;
+  width: 92%;
   display: flex;
   justify-content: space-between;
   background-color: #fff;
@@ -43,7 +43,8 @@ page{
 .header-box-authorDetail{
   padding:60rpx 0rpx 30rpx 0rpx;
   box-sizing:border-box;
-  color:#ff7f0d;
+  color:#000000;
+  font-family: "苹方黑体";
   font-weight:bold;
   margin-left:30rpx;
   width:64%;
@@ -80,6 +81,7 @@ page{
 .ifMember{
   margin-top: 40rpx;
   position: relative;
+  color: #ff7f0d
 }
 .ifMember-time{
   font-size: 24rpx;
@@ -89,7 +91,7 @@ page{
 }
 .ifMember-btn{
   position: absolute;
-  background-color: #ff7f0d;
+  background-color: #ff2d2d;
   color: #fff;
   font-size: 24rpx;
   border-radius: 10rpx;
@@ -99,16 +101,43 @@ page{
 }
 /* 中间按钮部分 */
 .my-content{
-  width: 86%;
-  border:2rpx solid #fc9050;
+  width: 92%;
+  border:2rpx solid rgb(226, 226, 226);
   background-color: #fff;
-  padding: 40rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
   box-sizing: border-box;
   border-radius: 10rpx;
   margin: 0 auto;
-  margin-top: 175rpx;
-  height: 655rpx;
+  margin-top: 147rpx;
+  height: auto;
+  display: flex;
+  flex-wrap:wrap; 
+  justify-content: left
 }
+.callServiceBtn, .my-content image{
+  width: 32%;
+  height: 176rpx;
+   padding: 0!important;
+
+}
+.nth{
+ 
+  width: 36%!important;
+
+}
+.callServiceBtn::after{
+  border-radius:0 ;
+  border: none;
+  background: rgba(0, 0, 0, 0) 
+}
+
+.callService{
+  width: 100%!important;
+  height: 100%!important;
+
+}
+
 .content-first{
   width: 100%;
   display: flex;
@@ -136,4 +165,23 @@ page{
 }
 .content-first-other{
   margin-right: 10%;
+}
+.erweima{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+
+}
+.erweima image{
+  width: 416rpx;
+  height: 416rpx;
+  display: inline-block;
+  margin-top: 50%; 
+  margin-left: 50%;
+  position: relative;
+  left: -25%
 }
